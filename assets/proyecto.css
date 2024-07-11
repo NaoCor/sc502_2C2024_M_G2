@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.section-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.image-container {
+    display: inline-block;
+    margin-bottom: 20px;
+    /* Espacio entre la imagen y el título */
+}
+
+
+h2{
+    font-weight: bold ;
+}
+.cardref{
+    color:#242b52;
+    margin-bottom: 150px;
+    font-size: larger;
+}
+
+.encabezado{
+    text-align: center;
+     margin-top: 50px;
+     color: #242b52;
+     font-weight: bold;
+}
