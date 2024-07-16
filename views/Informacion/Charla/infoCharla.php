@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg " style="background-color: #6477e4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
@@ -41,7 +41,7 @@
     </header>
 
 
-    <section class="container" style="max-width: 100%; padding-left: 15px; padding-right: 15px;">
+    <section class="container" style="max-width: 100%; padding-left: 15px; padding-right: 15px; margin-top: 50px;">
         <div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -94,15 +94,22 @@
                     <div class="image-container text-center">
                         <figure style="display: inline-block;">
                             <img src="https://definicion.de/wp-content/uploads/2011/09/charla-1.jpg"
-                                alt="Imagen de abuso físico" width="280" height="250">
+                                alt="Imagen de abuso físico" width="300" height="250">
                         </figure>
                     </div>
-                    <div class="card" style="width: 18rem; margin-top: 25px;">
+                    <div class="card" style="width: 18rem; margin-top: 25px;margin-left: 25px; text-align: center; background-color: #7a64e3;color: white;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title" style="color:#242b52">Caracteristicas
+                            </h5>
+                            <p class="card-text">Fecha</p>
+                            <p class="card-text">Hora</p>
+                            <p class="card-text">Costo x entrada</p>
+                            <p class="card-text">Lugar</p>
+                            <p class="card-text">Tipo</p>
+                            <p class="card-text">Duracion</p>
+                            <p class="card-text">Formato</p>
+                            <p class="card-text">Objetivo</p>
+                            <a href="./FormularioRegistro.php " class="btn "  style="background-color: #64c7e3;">Registrate</a>
                         </div>
                     </div>
                 </div>

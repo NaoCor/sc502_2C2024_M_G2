@@ -101,7 +101,7 @@
             </div>
         </div>
         
-        
+        <a href="./RegistroCharla.php">  <button type="submit" class="btn btn-primary">Submit</button></a>
 
 </body>
 
