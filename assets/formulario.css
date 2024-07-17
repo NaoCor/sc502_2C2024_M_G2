@@ -5,29 +5,6 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #673ab7;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
 main {
     padding: 20px;
 }
@@ -42,7 +19,7 @@ main {
 }
 
 .formulario-container h2 {
-    background-color: #9575cd;
+    background-color: #6565a6;
     color: white;
     margin: 0 -20px 20px;
     padding: 10px 20px;
@@ -65,7 +42,7 @@ main {
 
 .formulario-container input[type="submit"],
 .formulario-container input[type="reset"] {
-    background-color: #673ab7;
+    background-color: #6565a6;
     border: none;
     border-radius: 5px;
     color: white;
@@ -76,5 +53,58 @@ main {
 
 .formulario-container input[type="submit"]:hover,
 .formulario-container input[type="reset"]:hover {
-    background-color: #5e35b1;
+    background-color: #6565a6;
+}
+
+.cuerpo {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.consultas {
+    width: 70%;
+}
+
+.faq {
+    width: 25%;
+    background-color: #6565a6;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.faq h2 {
+    margin-top: 0;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faq ul li {
+    margin-bottom: 10px;
+}
+
+.faq {
+    width: 300px;
+    margin: 20px;
+}
+.faq-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+}
+.faq-answer {
+    display: none;
+    margin: 10px 0 0 20px;
+}
+.arrow {
+    font-size: 12px;
 }

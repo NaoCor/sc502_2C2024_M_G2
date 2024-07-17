@@ -8,14 +8,38 @@
     <link rel="stylesheet" href="../../assets/foro.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../php/formulario.php">Formulario de Denuncias</a></li>
-                <li><a href="../php/foro.php">Foro de Denuncias</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar navbar-expand-lg " style="background-color: #6477e4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../sesion/paginaPrincipal.php">
+                <img src="../../img/icon.png" alt="Descripción de la imagen de navbar" style="height: 40px;">
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../consultas/consulta1.php">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Informacion/informacion.php">Informacion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../LugaresSeguros/lugares_seguros.php">Lugares Seguros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Denuncias/formulario.php">Denuncias</a>
+                    </li>
+                </ul>
+                <a href="../sesion/inicioSesion.php" class="d-flex" style="margin-left: auto;">
+                    <img src="../../img/avatar.png" alt="Descripción de la imagen" style="height: 40px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
     <main>
         <div class="foro-container">
             <h2>Foro de Denuncias</h2>

@@ -1,0 +1,24 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    text-align: center;
+    padding: 50px 20px;
+}
+.container img {
+    width: 150px;
+    height: 150px;
+}
+.container p {
+    font-size: 18px;
+    color: #333;
+}
+.opcion{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

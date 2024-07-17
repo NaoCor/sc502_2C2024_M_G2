@@ -10,40 +10,45 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg " style="background-color: #6477e4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Consultas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Informacion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Lugares Seguros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Denuncias</a>
-                        </li>
-                    </ul>
-                </div>
+<header>
+    <nav class="navbar navbar-expand-lg " style="background-color: #6477e4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../sesion/paginaPrincipal.php">
+                <img src="../../img/icon.png" alt="Descripción de la imagen de navbar" style="height: 40px;">
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../consultas/consulta1.php">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Informacion/informacion.php">Informacion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../LugaresSeguros/lugares_seguros.php">Lugares Seguros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Denuncias/formulario.php">Denuncias</a>
+                    </li>
+                </ul>
+                <a href="../sesion/inicioSesion.php" class="d-flex" style="margin-left: auto;">
+                    <img src="../../img/avatar.png" alt="Descripción de la imagen" style="height: 40px;">
+                </a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
     <section>
         <h1 style="text-align: center;">Informacion</h1>
         <div class="row">
             <div class="col-1"></div>
             <div class="col">
                 <div class="card" style="width: 18rem; text-align: center; background-color: #7a64e3;">
-                    <img src=".."
+                    <img src="https://img.freepik.com/vector-gratis/concepto-acoso-cibernetico_52683-41021.jpg"
                         class="card-img-top" alt="..." style="margin-top: 25px;">
                     <div class="card-body">
                         <h5 class="card-title" style="color: white;">Acoso </h5>
@@ -54,8 +59,9 @@
             <div class="col">
 
                 <div class="card" style="width: 18rem; text-align: center; background-color: #7a64e3;">
-                    <img src="https://static.vecteezy.com/system/resources/previews/013/194/570/non_2x/sexual-harassment-at-work-abuse-violence-at-job-free-vector.jpg"
-                        class="card-img-top" alt="..." style="margin-top: 25px;">
+                <img src="https://img.freepik.com/vector-premium/concepto-abuso-escandalo-hogar-mama-papa-padres-enojados-furiosos-gritando-gritando-su-hija-triste-sosteniendo-ilustracion-vector-mochila_140689-3132.jpg"
+                    class="card-img-top" alt="..." style="margin-top: 25px;">
+
                     <div class="card-body">
                         <h5 class="card-title" style="color: white;">Abuso</h5>
                         <a href="./Abuso/abuso.php" class="btn" style="background-color: #242b52; color: white;">Más Informacion</a>
@@ -65,7 +71,7 @@
             <div class="col">
 
                 <div class="card" style="width: 18rem; text-align: center; background-color: #7a64e3;">
-                    <img src="..."
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-charla-publica_114360-8970.jpg"
                         class="card-img-top" alt="..." style="margin-top: 25px;">
                     <div class="card-body">
                         <h5 class="card-title" style="color: white;">Charlas</h5>
@@ -75,6 +81,12 @@
             </div>
         </div>
     </section>
+    <footer>
+    <div class="footer" style=" background-color: #6477e4; padding: 10px; margin: 5px 0; text-align: center;" >
+      <p>© 2024 Derechos Reservados &COPY; safezone.com</p>
+      <p>Contáctenos al: info@safezone.com o +506 xxxx - xxx</p>
+    </div>
+</footer>
 
 
 </body>
