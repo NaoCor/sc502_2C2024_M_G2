@@ -4,44 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informacion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg " style="background-color: #6477e4">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../sesion/paginaPrincipal.php">
-                <img src="../../img/icon.png" alt="Descripción de la imagen de navbar" style="height: 40px;">
-                </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../consultas/consulta1.php">Consultas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Informacion/informacion.php">Informacion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../LugaresSeguros/lugares_seguros.php">Lugares Seguros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Denuncias/formulario.php">Denuncias</a>
-                    </li>
-                </ul>
-                <a href="../sesion/inicioSesion.php" class="d-flex" style="margin-left: auto;">
-                    <img src="../../img/avatar.png" alt="Descripción de la imagen" style="height: 40px;">
-                </a>
-            </div>
-        </div>
-    </nav>
-</header>
+            <nav class="navbar navbar-expand-lg " style="background-color: #6477e4;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./paginaPrincipal.php">
+                        <img src="./assets/img/icon.png" alt="Descripción de la imagen de navbar" style="height: 40px;">
+                        </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav"  >
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./consulta1.php" style="color: white;">Consultas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./informacion.php" style="color: white;">Informacion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lugares_seguros.php" style="color: white;">Lugares Seguros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./formularioDenuncias.php" style="color: white;">Denuncias</a>
+                            </li>
+                        </ul>
+                        <a href="./inicioSesion.php" class="d-flex" style="margin-left: auto;">
+                            <img src="./assets/img/avatar.png" alt="Descripción de la imagen" style="height: 40px;">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
     <section>
         <h1 style="text-align: center;">Informacion</h1>
         <div class="row">
@@ -64,7 +64,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title" style="color: white;">Abuso</h5>
-                        <a href="./Abuso/abuso.php" class="btn" style="background-color: #242b52; color: white;">Más Informacion</a>
+                        <a href="./abuso.php" class="btn" style="background-color: #242b52; color: white;">Más Informacion</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         class="card-img-top" alt="..." style="margin-top: 25px;">
                     <div class="card-body">
                         <h5 class="card-title" style="color: white;">Charlas</h5>
-                        <a href="../Informacion/Charla/charlas.php" class="btn" style="background-color: #242b52; color: white;">Más Informacion</a>
+                        <a href="./charlas.php" class="btn" style="background-color: #242b52; color: white;">Más Informacion</a>
                     </div>
                 </div>
             </div>
