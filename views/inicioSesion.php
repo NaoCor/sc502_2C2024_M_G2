@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header>
+        <header>
             <nav class="navbar navbar-expand-lg " style="background-color: #6477e4;">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./paginaPrincipal.php">
@@ -48,9 +48,9 @@
         
     <div class="inicio-container">
         <img src="./assets/img/icon.png" alt="Safe Zone" width="100">
-        <form>
-            <input type="email" placeholder="Email" required><br>
-            <input type="password" placeholder="Contraseña" required><br>
+        <form id="formulario" >
+            <input type="email" placeholder="Email" id="email" name="email"  required><br>
+            <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required><br>
             <div class="recordar">¿Olvidaste tu contraseña?</div>
             <input type="submit" value="Iniciar">
             <br>
@@ -60,14 +60,18 @@
 
         </form>
     </div>
+
+
     <footer>
     <div class="footer" style=" background-color: #6477e4; padding: 10px; margin: 5px 0; text-align: center;" >
       <p>© 2024 Derechos Reservados &COPY; safezone.com</p>
       <p>Contáctenos al: info@safezone.com o +506 xxxx - xxx</p>
     </div>
 </footer>
+
+
 </body>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="./assets/js/inicio.js"></script>
 </html>
