@@ -11,63 +11,32 @@
 </head>
 
 <body>
-        <header>
-            <nav class="navbar navbar-expand-lg " style="background-color: #6477e4;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="./paginaPrincipal.php">
-                        <img src="./assets/img/icon.png" alt="Descripción de la imagen de navbar" style="height: 40px;">
-                        </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav"  >
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./consulta1.php" style="color: white;">Consultas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./informacion.php" style="color: white;">Informacion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./lugares_seguros.php" style="color: white;">Lugares Seguros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./formularioDenuncias.php" style="color: white;">Denuncias</a>
-                            </li>
-                        </ul>
-                        <a href="./inicioSesion.php" class="d-flex" style="margin-left: auto;">
-                            <img src="./assets/img/avatar.png" alt="Descripción de la imagen" style="height: 40px;">
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </header>
+
+<header>
+        <?php include './header.php'; ?>
+    </header>
 
 
         
-    <div class="inicio-container">
-        <img src="./assets/img/icon.png" alt="Safe Zone" width="100">
-        <form id="formulario" >
-            <input type="email" placeholder="Email" id="email" name="email"  required><br>
-            <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required><br>
+    <div class="formulario">
+        <h1>Inicio de Sesion</h1>
+        <form method="post">
+            <div class="username">
+                <input type="text" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="username">
+                <input type="password" required>
+                <label>Contraseña</label>
+            </div>
             <div class="recordar">¿Olvidaste tu contraseña?</div>
             <input type="submit" value="Iniciar">
-            <br>
             <div class="registrarse">
                 No tienes cuenta? <a href="./registro.php">registrate!</a>
             </div>
-
         </form>
+    
     </div>
-
-
-    <footer>
-    <div class="footer" style=" background-color: #6477e4; padding: 10px; margin: 5px 0; text-align: center;" >
-      <p>© 2024 Derechos Reservados &COPY; safezone.com</p>
-      <p>Contáctenos al: info@safezone.com o +506 xxxx - xxx</p>
-    </div>
-</footer>
 
 
 </body>
@@ -75,3 +44,8 @@
 <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./assets/js/inicio.js"></script>
 </html>
+
+
+
+
+

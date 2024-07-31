@@ -1,101 +1,228 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
+    background: #f6efff;
     margin: 0;
     padding: 0;
+    
 }
 
-
-.profile img {
-    height: 40px;
-}
-
-.cuerpo {
-    display: flex;
-    justify-content: space-between;
+.container {
     padding: 20px;
 }
 
-.consultas {
-    width: 70%;
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #6200EA;
+    font-size: 48px;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.escribir-pregunta {
-    margin-bottom: 20px;
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+.card-body {
+    padding: 20px;
 }
 
 .escribir-pregunta button {
-    background-color: #242b52;
-    color: white;
+    background-color: #6200EA;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.escribir-pregunta button:hover {
+    background-color: #5a2a91;
+    transform: scale(1.05);
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.escribir-pregunta-form {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 10px;
+}
+
+.btn-container button {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    animation: fadeIn 1s ease-in-out; 
 }
 
 .pregunta {
-    background-color: #6565a6;
+    background-color: #ffffff;
     padding: 20px;
+    border-radius: 12px;
+    color: #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    border-radius: 10px;
-    color:white;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .usuario {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
 }
 
-.contenido-pregunta {
-    margin-bottom: 10px;
+.avatar-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
 }
 
-.faq {
-    width: 25%;
-    background-color: #6565a6;
+.contenido-pregunta, .respuesta {
+    margin-bottom: 15px;
+}
+
+.accordion-button {
+    background-color: #6200EA;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.faq h2 {
-    margin-top: 0;
-}
-
-.faq ul {
-    list-style: none;
-    padding: 0;
-}
-
-.faq ul li {
-    margin-bottom: 10px;
-}
-
-.faq {
-    width: 300px;
-    margin: 20px;
-}
-.faq-item {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    background-color: #f9f9f9;
-}
-.faq-answer {
-    display: none;
-    margin: 10px 0 0 20px;
-}
-.arrow {
-    font-size: 12px;
-}
-.escribir-pregunta-form {
-    margin-top: 20px;
-    border: 1px solid #ddd;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
     padding: 15px;
-    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #5a2a91;
+    transform: translateY(-2px);
+}
+
+.accordion-button:hover {
+    background-color: #5a2a91;
+    transform: translateY(-3px);
+}
+
+.accordion-body {
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.accordion {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-border-animate {
+    background: #6f42c1;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, background 0.3s ease;
+    display: inline-block;
+}
+
+.btn-border-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco con opacidad */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.btn-border-animate:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.btn-border-animate:hover {
+    background: #5a2a91; /* Esto hace que cambie más oscuro cuando se pone el mouse encima */
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

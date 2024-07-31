@@ -1,24 +1,151 @@
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: #f6efff;
+    
 }
-.container {
+
+.welcome-text {
+    font-size: 100px;
     text-align: center;
-    padding: 50px 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #6200EA;
+    font-size: 30px;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in-out;
 }
-.container img {
-    width: 150px;
-    height: 150px;
+
+.carousel-item img {
+    object-fit: cover;
+    height: 500px;
 }
-.container p {
-    font-size: 18px;
-    color: #333;
+
+.carousel-caption {
+    bottom: 20px;
 }
-.opcion{
-    display: flex;
-    justify-content: center;
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    padding: 20px;
+}
+
+.intro {
     margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    margin: 40px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.btn-custom {
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #4a5bff;
+}
+
+.call-to-action {
+    background-color: #6f42c1;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 60px; 
+}
+
+.call-to-action h3 {
+    margin-bottom: 20px;
+}
+
+.footer {
+background: linear-gradient(135deg, #6f42c1, #5a2c91, #3e1a5a);
+color: white;
+padding: 20px 10px; 
+position: relative;
+overflow: hidden;
+border-top: 5px solid #4a1a78; 
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+
+.btn-border-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco con opacidad */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.btn-border-animate:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.btn-border-animate:hover {
+    background: #5a2a91; /* esto hace que cambie mas oscuro cuando se pone el mouse como encima o sea la flecha */
+    color: #fff;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
