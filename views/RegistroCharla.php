@@ -24,7 +24,7 @@
 
     <div class="container my-5">
         <div class="formulario-container p-4 rounded bg-light shadow-sm">
-            <h2 class="text-center" >Formulario SafeZone</h2>
+            <h2 class="text-center" >Formulario Registro de Charla SafeZone</h2>
             <form>
                 <fieldset class="mb-4">
                     <legend class=" fw-bold">Información Presentador</legend>

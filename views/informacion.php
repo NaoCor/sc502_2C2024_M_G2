@@ -32,7 +32,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Acoso</h5>
                             <p class="card-text">Aquí encontrarás información sobre el acoso y cómo prevenirlo.</p>
-                            <a href="#" class="btn-border-animate">Más Información</a>
+                            <a href="./acoso.php" class="btn-border-animate">Más Información</a>
                         </div>
                     </div>
                 </div>
