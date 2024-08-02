@@ -4,34 +4,10 @@ body {
     background-color: #f3f3f3;
     margin: 0;
     padding: 0;
+    background: #f6efff;
 }
 
-header {
-    background-color: #673ab7;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
 
 .foro-container {
     background-color: white;
@@ -71,6 +47,7 @@ main {
 }
 
 .foro-item a {
+    
     background-color: #673ab7;
     border-radius: 5px;
     color: white;
@@ -81,4 +58,63 @@ main {
 
 .foro-item a:hover {
     background-color: #5e35b1;
+    
+}
+
+
+.consultas-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+}
+
+.consultas-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.consulta-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consulta-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.consulta-item h3 {
+    color: #6200ea;
+    margin-top: 0;
+}
+
+.consulta-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.respuesta {
+    background: #f1f1f1;
+    border-left: 4px solid #6200ea;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.respuesta h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.respuesta p {
+    margin: 0;
+    color: #444;
 }
