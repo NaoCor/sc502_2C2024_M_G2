@@ -28,7 +28,7 @@
             <div class="col-md-7">
                 <div class="formulario-container">
                     <h2>Formulario de Denuncia de Acoso y Abuso</h2>
-                    <form>
+                    <form id="formulario">
                         <fieldset class="mb-4">
                             <legend>Información Denunciante</legend>
                             <div class="mb-3">
@@ -54,26 +54,27 @@
                                 <input type="text" id="nombre_denunciado" name="nombre_denunciado" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="relacion" class="form-label">Relación</label>
-                                <input type="text" id="relacion" name="relacion" class="form-control">
+                                <label for="relacion_agresor" class="form-label">Relación</label>
+                                <input type="text" id="relacion_agresor" name="relacion_agresor" class="form-control">
                             </div>
                         </fieldset>
                         <fieldset class="mb-4">
                             <legend>Detalles del Incidente</legend>
                             <div class="mb-3">
                                 <label for="tipo" class="form-label">Tipo</label>
+                            
+                            </div>
+                            <div class="mb-3"> 
                                 <select id="tipo" name="tipo" class="form-select">
                                     <option selected>Selecciona una opcion</option>
-                                    <option value="abuso">Abuso Fisico</option>
-                                    <option value="abuso">Abuso Verbal</option>
-                                    <option value="abuso">Abuso Sexual</option>
-                                    <option value="acoso">Acoso Social</option>
-                                    <option value="acoso">Acoso Fisico</option>
-                                    <option value="acoso">Acoso informatico</option>
-                                    <option value="acoso">Acoso Verbal</option>
+                                    <option value="abuso Fisico">Abuso Fisico</option>
+                                    <option value="abuso Verbal">Abuso Verbal</option>
+                                    <option value="abuso Sexual">Abuso Sexual</option>
+                                    <option value="acoso Social">Acoso Social</option>
+                                    <option value="acoso Fisico">Acoso Fisico</option>
+                                    <option value="acoso Informatico">Acoso informatico</option>
+                                    <option value="acoso Verbal">Acoso Verbal</option>
                                 </select>
-                            </div>
-                            <div class="mb-3">
                                 <label for="fecha" class="form-label">Fecha</label>
                                 <input type="date" id="fecha" name="fecha" class="form-control">
                             </div>
@@ -82,8 +83,8 @@
                                 <input type="text" id="lugar" name="lugar" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="descripcion" class="form-label">Descripción</label>
-                                <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+                                <label for="relacionagresor" class="form-label">Relacion</label>
+                                <textarea id="relacionagresor" name="relacionagresor" class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="documentacion" class="form-label">Documentación Adicional</label>
@@ -161,6 +162,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="./assets/js/denuncias.js"></script>
 </body>
 </html>
 

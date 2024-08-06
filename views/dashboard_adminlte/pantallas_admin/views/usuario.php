@@ -68,6 +68,8 @@
                                         <input type="reset" class="btn btn-warning"
                                             value="Borrar datos">
                                     </div>
+                                    <button class='btn btn-success activar'>Activar</button>
+                                    <button class='btn btn-danger desactivar'>Desactivar</button>
                                 </div>
                             </form>
                         </div>
