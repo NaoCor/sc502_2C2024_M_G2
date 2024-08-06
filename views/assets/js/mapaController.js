@@ -1,24 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const botones = document.querySelectorAll('.rectangle');
+  const select = document.getElementById('provincias');
+  const iframeContainer = document.querySelector('.iframe-container');
+  const iframe = document.getElementById('mapa');
 
-    const urlPorID = {
-      'centro-patrimonios': 'https://maps.app.goo.gl/ZB9H4LRPSv12ZYmH9', 
-      'mcdonalds-banco': 'https://maps.app.goo.gl/h7zsorF4MLvvoZvK6', 
-      'pizza-hut-avenida': 'https://maps.app.goo.gl/cVUcNezamkH5hjha8', 
-      'hotel-balmoral': 'https://maps.app.goo.gl/bkjYA9TCioN8kjSF8', 
-      'mcdonalds-plaza': 'https://maps.app.goo.gl/r4rShiDCFsPYYbin8', 
-      'tienda-la-gloria': 'https://maps.app.goo.gl/hYdFFLMHg7cMMAf18'
-    };
-
-    botones.forEach(function(boton) {
-      boton.addEventListener('click', function() {
-
-        const id = this.id;
-
-        const url = urlPorID[id];
-  
-        window.open(url);
+  fetch('../model/provincias.php')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(provincia => {
+        const option = document.createElement('option');
+        option.value = provincia.idProvincia;
+        option.textContent = provincia.nombre;
+        select.appendChild(option);
       });
-    });
-  });
-  
+
+      actualizarIframe(data[0].mapa);
+
+      select.addEventListener('change', function() {
+        const selectedId = this.value;
+        const selectedProvincia = data.find(prov => prov.idProvincia == selectedId);
+        actualizarIframe(selectedProvincia.mapa);
+
+        cargarLugares(selectedId);
+      });
+
+      cargarLugares(data[0].idProvincia);
+    })
+    .catch(error => console.error('Error al cargar provincias:', error));
+});
+
+function actualizarIframe(contenido) {
+  const iframeContainer = document.querySelector('.iframe-container');
+  iframeContainer.innerHTML = '';
+  iframeContainer.innerHTML = contenido;
+}
+
+function cargarLugares(provinciaId) {
+  fetch(`../model/obtener_lugares.php?provinciaId=${provinciaId}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); 
+      const contenedor = document.getElementById('contenedor-lugares');
+      contenedor.innerHTML = ''; 
+      if (data.error) {
+        console.error('Error al cargar los lugares:', data.error);
+        return;
+      }
+      data.forEach(lugar => {
+        const boton = document.createElement('button');
+        boton.className = 'rectangle';
+        boton.id = lugar.idLugarSeguro;
+        boton.innerHTML = `
+          <img src="./assets/img/mapa.png" alt="icono" height="43px">
+          <p>${lugar.nombre}</p>
+        `;
+        boton.onclick = () => actualizarIframe(lugar.iframe);
+        contenedor.appendChild(boton);
+      });
+    })
+    .catch(error => console.error('Error al cargar los lugares:', error));
+}
