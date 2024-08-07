@@ -67,6 +67,8 @@
                             <li>Cualquier tipo de contacto físico que cause dolor, malestar o lesiones a la víctima.</li>
                             <li>Acciones como empujones, golpes, patadas, pellizcos.</li>
                             <li>Agresiones sexuales no consentidas.</li>
+                            <br>
+                            
                         </ol>
                     </div>
                 </div>

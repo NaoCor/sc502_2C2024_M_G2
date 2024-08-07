@@ -25,35 +25,43 @@
     <div class="container my-5">
         <div class="formulario-container p-4 rounded bg-light shadow-sm">
             <h2 class="text-center" >Formulario Registro de Charla SafeZone</h2>
-            <form>
+            <form id="registroCharla">
                 <fieldset class="mb-4">
                     <legend class=" fw-bold">Información Presentador</legend>
                     <div class="mb-3">
                         <label for="nombreCompleto" class="form-label">Nombre Completo</label>
                         <div class="row">
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre">
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido">
+                                <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="primerApellido" name="primerApellido">
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="2do. Apellido" aria-label="2do. Apellido">
+                                <input type="text" class="form-control" placeholder="2do. Apellido" aria-label="2do. Apellido"  id="segundoApellido" name="segundoApellido"> 
                             </div>
+                            <div class="mb-3">
+                        <label for="costo" class="form-label">Numero de identificacion/Cedula</label>
+                        <input type="number" id="identificacion" name="identificacion" class="form-control">
+                    </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="telefono_Presentador" class="form-label">Número Telefónico</label>
-                        <input type="text" id="telefono_Presentador" name="telefono_Presentador" class="form-control" placeholder="+506">
+                        <label for="numero" class="form-label">Número Telefónico</label>
+                        <input type="text"class="form-control" placeholder="+506" id="numero" name="numero">
                     </div>
                     <div class="mb-3">
-                        <label for="correo_Presentador" class="form-label">Correo Electrónico</label>
-                        <input type="email" id="correo_Presentador" name="correo_Presentador" class="form-control">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email"  class="form-control"  id="correo" name="correo">
                     </div>
                 </fieldset>
                 
                 <fieldset class="mb-4">
                     <legend class="fw-bold">Información Charla</legend>
+                    <div class="mb-3">
+                        <label for="nombreCharla" class="form-label">Nombre Charla</label>
+                        <input type="text" id="nombreCharla" name="nombreCharla" class="form-control">
+                    </div>
                     <div class="mb-3">
                         <label for="fecha" class="form-label">Fecha</label>
                         <input type="date" id="fecha" name="fecha" class="form-control">
@@ -70,16 +78,16 @@
                         <label for="lugar" class="form-label">Lugar</label>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Provincia">
+                                <input type="text" class="form-control" placeholder="Provincia"  id="provincia">
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Cantón">
+                                <input type="text" class="form-control" placeholder="Cantón" id="edificio">
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Distrito">
+                                <input type="text" class="form-control" placeholder="Distrito" id="distrito">
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Edificio">
+                                <input type="text" class="form-control" placeholder="Edificio" id=distrito>
                             </div>
                         </div>
                     </div>
@@ -91,10 +99,7 @@
                             <option value="Ayuda">Ayuda</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="lugar" class="form-label">Lugar</label>
-                        <input type="text" id="lugar" name="lugar" class="form-control">
-                    </div>
+                   
                     <div class="mb-3">
                         <label for="duracion" class="form-label">Duración</label>
                         <input type="text" id="duracion" name="duracion" class="form-control">
@@ -137,6 +142,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="./assets/js/Charla.js"></script>
 </body>
 
 </html>

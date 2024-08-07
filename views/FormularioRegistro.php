@@ -37,36 +37,34 @@
                             <h5 class="card-title">Inscripción a conferencia: Contra el Abuso: Creando Espacios Seguros</h5>
                             <h6 class="card-subtitle mb-2">29 agosto 2024 / San José, Palma Real Hotel</h6>
                             <div class="border-top my-3"></div>
-                            <form>
+                            <form id="reserva">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-                                    <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido">
-                                    <input type="text" class="form-control" placeholder="2do. Apellido" aria-label="2do. Apellido">
+                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre">
+                                    <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="apellido" name="apellido">
+                                  
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cedula">Cedula</label>
+                                    <input type="text" id="cedula" name="cedula" class="form-control"
+                                        placeholder="+506">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="telefono_Presentador">Número Telefónico</label>
-                                    <input type="text" id="telefono_Presentador" name="telefono_Presentador" class="form-control"
-                                        placeholder="+506">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" name="email">
                                 </div>
                                 <div class="mb-1">
-                                    <label for="exampleInputEntrada" class="form-label">Entradas</label>
-                                    <input type="number" class="form-control" id="exampleInputEntrada">
+                                    <label for="entrada" class="form-label">Entradas</label>
+                                    <input type="number" class="form-control" id="entrada" name="entrada">
                                 </div>
                                 <p style="font-weight: bold; color: #242b52; margin-top: 15px;">Total:</p>
                                 <h6>Metodo de Pago</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                    <label class="form-check-label" for="flexRadioDefault1">Sinpe Movil</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">Transferencia Bancaria</label>
-                                </div>
+                                <select class="form-select" aria-label="Default select example" id="metodo" name="metodo">
+                      
+                        <option value="1">SinpeMovil</option>
+                        <option value="2">Tarjeta</option>
+                   
+                        </select>
                                 <div style="text-align: right; margin-top: 20px;">
                                     <button type="submit"  class="btn-border-animate" style="background-color: #6477e4; color: white; border-color: #6477e4;" >Registrar</button>
                                     <button type="button"  class="btn-border-animate" style="background-color: #6477e4; color: white; border-color: #6477e4;">Cancelar</button>
@@ -86,6 +84,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="./assets/js/reserva.js"></script>
 </body>
 
 </html>

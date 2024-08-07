@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./assets/css/charlas.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/tipo2.css">
+
     <style>
 
     </style>
@@ -91,6 +93,41 @@
         </div>
     </div>
 </div>
+
+
+
+<section id=prueba>
+
+<div class="container">
+<div class="row card-container">
+                <?php
+include '../config/Conexion.php';
+$cnx = Conexion::conectar();
+$query = "SELECT * FROM charla"; 
+$sql = $cnx->prepare($query);
+$sql->execute();
+$charlas = $sql->fetchAll();
+
+foreach ($charlas as $charla) {
+
+?>
+<div class="col-md-4 card-wrapper">
+                    <div class="card">
+                        <img src="https:/img.freepik.com/vector-premium/victima-acoso-social_179970-945.jpg"
+                            class="card-img-top" alt="Acoso Social">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $charla['nombreCharla']?></h5>
+                            <a href="./infoCharla.php" class="btn-border-animate">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    <?php }?>
+
+</section>
+
 
 <div class="text-center mt-4">
     <a href="./RegistroCharla.php">

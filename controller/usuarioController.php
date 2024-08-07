@@ -1,8 +1,11 @@
 <?php
     require_once '../model/Usuario.php';
-    $correo = (isset($_POST["email"])) ? $_POST["email"] : "";
-    $contraseña = (isset($_POST["contraseña"])) ? $_POST["contraseña"] : "";
+    $correo = (isset($_POST["username"])) ? $_POST["username"] : "";
+    $contraseña = (isset($_POST["password"])) ? $_POST["password"] : "";
     echo($correo);
+    $usuario = new Usuario();
+    $usuario ->setcorreo('corellanaomi@gmail.com');
+    echo($usuario->getcorreo());
    
     try {
         $usuario = new Usuario();
@@ -12,9 +15,9 @@
    
     
         if ($datos_usuario['correo'] == 'corellanaomi@gmail.com') {
-           echo json_encode($datos_usuario['correo']);
+          // echo json_encode($datos_usuario['correo']);
         } else {
-            echo('login no hecho');
+           // echo('login no hecho');
 
         }
 
