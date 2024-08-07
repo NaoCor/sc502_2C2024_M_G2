@@ -17,22 +17,17 @@
         ?>
     </header>
     <div class="foro-container">
-        <h2>Foro de Denuncias</h2>
-        <div class="foro-item">
-            <h3>Denuncia #XX</h3>
-            <p><strong>Fecha:</strong> xx/xx/xxxx</p>
-            <p><strong>Lugar:</strong> xxxxxxxx</p>
-            <p><strong>Descripción:</strong> xxxxxxxx</p>
-            <a href="#">Ver más detalles</a>
-        </div>
+
+        
     </div>
 
     <footer>
         <?php
-         include './footer.php'
+        include './footer.php'
         ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./assets/js/foro.js"></script>
 </body>
 
 </html>
