@@ -17,6 +17,15 @@
     <header>
         <?php include './header.php'; ?>
     </header>
+    <?php $idCharla = $_GET["categoria"]; 
+     include '../config/Conexion.php';
+     $cnx = Conexion::conectar();
+     $query = "SELECT * FROM charla WHERE idCharla = :idCharla";
+     $sql = $cnx->prepare($query);
+     $sql->bindParam(':idCharla', $idCharla, PDO::PARAM_INT);
+     $sql->execute();
+     $charla = $sql->fetch(PDO::FETCH_ASSOC);
+         ?> 
 
     <section class="container section-container">
         <div class="row justify-content-center align-items-center">
@@ -30,12 +39,12 @@
             </div>
             <div class="col-md-7 order-md-2">
                 <div class="custom-container text-left">
-                    <h1>"Contra el Abuso: Creando Espacios Seguros"</h1>
+                    <h1><?php echo $charla['nombreCharla']?></h1>
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Inscripción a conferencia: Contra el Abuso: Creando Espacios Seguros</h5>
-                            <h6 class="card-subtitle mb-2">29 agosto 2024 / San José, Palma Real Hotel</h6>
+                            <h5 class="card-title">Inscripción a conferencia: <?php echo $charla['nombreCharla']?></h5>
+                            <h6 class="card-subtitle mb-2"><?php echo $charla['idProvincia']//cambiar porlugar?></h6>
                             <div class="border-top my-3"></div>
                             <form id="reserva">
                                 <div class="input-group mb-3">
@@ -53,16 +62,27 @@
                                     <label for="email" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="email" name="email">
                                 </div>
+                                
                                 <div class="mb-1">
-                                    <label for="entrada" class="form-label">Entradas</label>
-                                    <input type="number" class="form-control" id="entrada" name="entrada">
+                                     <label for="entrada" class="form-label">Entradas</label>
+                                     <input type="number" class="form-control" id="entrada" name="entrada" min="1" value="1" oninput="totalPago()">
                                 </div>
-                                <p style="font-weight: bold; color: #242b52; margin-top: 15px;">Total:</p>
+
+                                <div class="mb-1" style="display: none;">
+                                      <label for="precio" class="form-label" >Precio por Entrada</label>
+                                     <input type="number" class="form-control" id="precio" name="precio" value="<?php echo $charla['costo'];  ?>" readonly>
+                                </div>
+
+                                <div class="mb-1">
+                                      <label for="total" class="form-label">Total</label>
+                                      <input type="number" class="form-control" id="total" name="total" value="<?php echo $charla['costo']; ?>" disabled>
+                                </div>
+
                                 <h6>Metodo de Pago</h6>
                                 <select class="form-select" aria-label="Default select example" id="metodo" name="metodo">
                       
-                        <option value="1">SinpeMovil</option>
-                        <option value="2">Tarjeta</option>
+                                <option value="1">SinpeMovil</option>
+                                <option value="2">Tarjeta</option>
                    
                         </select>
                                 <div style="text-align: right; margin-top: 20px;">
@@ -87,5 +107,12 @@
         <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./assets/js/reserva.js"></script>
 </body>
-
+<script>
+function  totalPago() {
+    var cantidad = document.getElementById('entrada').value;
+    var precio = document.getElementById('precio').value;
+    var total = cantidad * precio;
+    document.getElementById('total').value = total;
+}
+</script>
 </html>

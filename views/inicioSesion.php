@@ -20,20 +20,17 @@
         
     <div class="formulario">
         <h1>Inicio de Sesion</h1>
-        <form method="post">
-            <div class="username">
-                <input type="text" required>
-                <label>Nombre de Usuario</label>
+        <form id="formulario1" method="post">
+            <div class=>
+            <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
             </div>
-            <div class="username">
+            <div class=>
                 <input type="password" required>
                 <label>Contraseña</label>
             </div>
             <div class="recordar">¿Olvidaste tu contraseña?</div>
-            <input type="submit" value="Iniciar">
-            <div class="registrarse">
-                No tienes cuenta? <a href="./registro.php">registrate!</a>
-            </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar Sesion</button>
         </form>
     
     </div>

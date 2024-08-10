@@ -5,7 +5,7 @@
     $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"] : "";
     $correo = (isset($_POST["email"])) ? $_POST["email"] : "";
     $entradas = (isset($_POST["entrada"])) ? $_POST["entrada"] : "";
-    $total= 1; //CAMBIAR ESTO AL TOTAL QUE ES RESULTADO DE ENTRADA*PRECIO
+    $total=   (isset($_POST["total"])) ? $_POST["total"] : "";
     $metodoPago=(isset($_POST["metodo"])) ? $_POST["metodo"] : "";
     $idCharla= 1; //este valor tiene que ser un hidden input cambiarlo
 

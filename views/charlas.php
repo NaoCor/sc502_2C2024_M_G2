@@ -117,7 +117,7 @@ foreach ($charlas as $charla) {
                             class="card-img-top" alt="Acoso Social">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $charla['nombreCharla']?></h5>
-                            <a href="./infoCharla.php" class="btn-border-animate">Más Información</a>
+                            <a href="./infoCharla.php?categoria=<?php echo $charla['idCharla']?>" class="btn-border-animate" input type="hidden" id="custId" name="custId" value=<?php echo $charla['nombreCharla']?>>Más Información</a>
                         </div>
                     </div>
                 </div>
