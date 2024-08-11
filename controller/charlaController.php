@@ -2,6 +2,7 @@
     require_once '../model/CharlaModel.php';
     $identificacion = (isset($_POST["identificacion"])) ? $_POST["identificacion"] : "";
     $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"] : "";
+    $primerApellido = (isset($_POST["primerApellido"])) ? $_POST["primerApellido"] : "";
     $numero = (isset($_POST["numero"])) ? $_POST["numero"] : "";
     $correo = (isset($_POST["correo"])) ? $_POST["correo"] : "";
     
@@ -19,6 +20,7 @@
     $duracion = (isset($_POST["duracion"])) ? $_POST["duracion"] : "";
     $charla = new CharlaModel();
     $charla->setNombre($nombre);
+    $charla->setprimerApellido($primerApellido);
     $charla->setnumero($numero);
     $charla->setcorreo($correo);
     $charla->setIdPresentador($identificacion);

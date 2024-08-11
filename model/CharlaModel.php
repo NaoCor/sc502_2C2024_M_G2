@@ -38,10 +38,7 @@ class CharlaModel extends Conexion {
         return $this->primerApellido;
     }
 
-    public function getsegundoApellido(){
-        return $this->segundoApellido;
-    }
-
+   
     public function getnumero(){
         return $this->numero;
     }
@@ -113,9 +110,7 @@ class CharlaModel extends Conexion {
     public function setprimerApellido($primerApellido){
         $this->primerApellido = $primerApellido;
     }
-    public function setsegundoApellido($segundoApellido){
-        $this->segundoApellido = $segundoApellido;
-    }
+
     public function setnumero($numero){
         $this->numero = $numero;
     }
@@ -191,16 +186,19 @@ public function setduracion($duracion){
     
 
     public function guardarPresentador(){
-        $query = "INSERT INTO `presentador`(idPresentador,`nombre`, `correo`, `numero_telefonico`) VALUES (:identificadorPDO,:nombrePDO, :correoPDO, :numeroPDO)";
+        $query = "INSERT INTO `presentador` (`idPresentador`, `nombre`, `primerApellido`, `correo`, `numero_telefonico`) 
+                  VALUES (:identificadorPDO, :nombrePDO, :primerApellidoPDO, :correoPDO, :numeroPDO)";
         try {
             self::getConexion();
             $nombreP = $this->getnombre();
-            $idPresentadorP= $this->getIdPresentador();
+            $primerApellidoP = $this->getprimerApellido();
+            $idPresentadorP = $this->getIdPresentador();
             $numeroP = $this->getnumero();
             $correoP = $this->getcorreo();
             
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":nombrePDO", $nombreP, PDO::PARAM_STR);
+            $resultado->bindParam(":primerApellidoPDO", $primerApellidoP, PDO::PARAM_STR);
             $resultado->bindParam(":identificadorPDO", $idPresentadorP, PDO::PARAM_INT);
             $resultado->bindParam(":correoPDO", $correoP, PDO::PARAM_STR);
             $resultado->bindParam(":numeroPDO", $numeroP, PDO::PARAM_INT);
@@ -213,6 +211,7 @@ public function setduracion($duracion){
             return json_encode($error);
         }
     }
+    
 
 
     public function guardarCharla(){

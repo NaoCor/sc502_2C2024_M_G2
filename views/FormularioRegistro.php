@@ -53,9 +53,9 @@
                                   
                                 </div>
                                 <div class="mb-3">
-                                    <label for="cedula">Cedula</label>
+                                    <label for="cedula">Identificacion</label>
                                     <input type="text" id="cedula" name="cedula" class="form-control"
-                                        placeholder="+506">
+                                       >
                                 </div>
 
                                 <div class="mb-3">
@@ -75,14 +75,14 @@
 
                                 <div class="mb-1">
                                       <label for="total" class="form-label">Total</label>
-                                      <input type="number" class="form-control" id="total" name="total" value="<?php echo $charla['costo']; ?>" disabled>
+                                      <input type="number" class="form-control" id="total" name="total" value="<?php echo $charla['costo']; ?>" readonly>
                                 </div>
 
                                 <h6>Metodo de Pago</h6>
                                 <select class="form-select" aria-label="Default select example" id="metodo" name="metodo">
                       
-                                <option value="1">SinpeMovil</option>
-                                <option value="2">Tarjeta</option>
+                                <option value="SinpeMovil">SinpeMovil</option>
+                                <option value="Tarjeta">Tarjeta</option>
                    
                         </select>
                                 <div style="text-align: right; margin-top: 20px;">

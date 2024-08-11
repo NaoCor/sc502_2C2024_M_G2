@@ -37,9 +37,7 @@
                             <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="primerApellido" name="primerApellido">
                             </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="2do. Apellido" aria-label="2do. Apellido"  id="segundoApellido" name="segundoApellido"> 
-                            </div>
+                        
                             <div class="mb-3">
                         <label for="costo" class="form-label">Numero de identificacion/Cedula</label>
                         <input type="number" id="identificacion" name="identificacion" class="form-control">

@@ -94,39 +94,38 @@
     </div>
 </div>
 
+<section>
+    <?php
+    include '../config/Conexion.php';
+    $cnx = Conexion::conectar();
+    $query = "SELECT * FROM charla"; 
+    $sql = $cnx->prepare($query);
+    $sql->execute();
+    $charlas = $sql->fetchAll();
+    ?>
 
-
-<section id=prueba>
-
-<div class="container">
-<div class="row card-container">
-                <?php
-include '../config/Conexion.php';
-$cnx = Conexion::conectar();
-$query = "SELECT * FROM charla"; 
-$sql = $cnx->prepare($query);
-$sql->execute();
-$charlas = $sql->fetchAll();
-
-foreach ($charlas as $charla) {
-
-?>
-<div class="col-md-4 card-wrapper">
-                    <div class="card">
+    <div class="container">
+        <div class="row">
+            <?php foreach ($charlas as $charla) { ?>
+                <div class="col-md-4 mb-4 d-flex justify-content-center"">
+                    <div class="card" style="width: 18rem;">
                         <img src="https:/img.freepik.com/vector-premium/victima-acoso-social_179970-945.jpg"
                             class="card-img-top" alt="Acoso Social">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $charla['nombreCharla']?></h5>
-                            <a href="./infoCharla.php?categoria=<?php echo $charla['idCharla']?>" class="btn-border-animate" input type="hidden" id="custId" name="custId" value=<?php echo $charla['nombreCharla']?>>Más Información</a>
+                            <a href="./infoCharla.php?categoria=<?php echo $charla['idCharla']?>" 
+                               class="btn-border-animate">
+                               Más Información
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-            </div>
+            <?php } ?>
         </div>
-    <?php }?>
-
+    </div>
 </section>
+
+
 
 
 <div class="text-center mt-4">

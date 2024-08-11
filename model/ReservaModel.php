@@ -101,8 +101,8 @@ class ReservaModel extends Conexion {
     }
 
     public function guardar() {
-        $query = "INSERT INTO `reserva`(`idCharla`, `primerApellido`, `nombre`, `cedula`, `correo`, `metodoPago`, `total`) 
-VALUES (:idCharlaPDO, :apellidoPDO, :nombrePDO, :cedulaPDO, :correoPDO, :metodoPDO, :totalPDO)";
+        $query = "INSERT INTO `reserva`(`idCharla`, `primerApellido`, `nombre`, `cedula`, `correo`, `metodoPago`, `cantidad`, `total`) 
+VALUES (:idCharlaPDO, :apellidoPDO, :nombrePDO, :cedulaPDO, :correoPDO, :metodoPDO, :cantidadPDO, :totalPDO)";
 try {
     self::getConexion();
     $idCharlaP = $this->getidCharla();
@@ -110,9 +110,9 @@ try {
     $apellidoP = $this->getprimerApellido();
     $cedulaP = $this->getcedula();
     $correoP = $this->getcorreo();
-    $entradasP = $this->getentradas(); // Not used in the query
+    $entradasP = $this->getentradas(); 
     $totalP = $this->gettotal();
-    $metodoP = $this->getMetodoP(); // Use this instead of $metodo
+    $metodoP = $this->getMetodoP(); 
     
     $resultado = self::$cnx->prepare($query);
     $resultado->bindParam(":idCharlaPDO", $idCharlaP, PDO::PARAM_INT);
@@ -120,9 +120,9 @@ try {
     $resultado->bindParam(":nombrePDO", $nombreP, PDO::PARAM_STR);
     $resultado->bindParam(":cedulaPDO", $cedulaP, PDO::PARAM_STR);
     $resultado->bindParam(":correoPDO", $correoP, PDO::PARAM_STR);
-    $resultado->bindParam(":totalPDO", $totalP, PDO::PARAM_INT);
+    $resultado->bindParam(":cantidadPDO", $entradasP, PDO::PARAM_INT);
     $resultado->bindParam(":metodoPDO", $metodoP, PDO::PARAM_STR);
-
+    $resultado->bindParam(":totalPDO", $totalP, PDO::PARAM_INT);
     $resultado->execute();
     self::desconectar();
 } catch (PDOException $e) {
