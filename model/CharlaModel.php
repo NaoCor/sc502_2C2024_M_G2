@@ -16,9 +16,7 @@ class CharlaModel extends Conexion {
     private $fecha =null;
     private $hora =null;
     private $costo=null;
-    private $provincia =null;
-    private $canton=null;
-    private $distrito=null;
+    private $lugar =null;
     private $tipo =null;
     private  $formato=null;
     private  $objetivo =null;
@@ -62,16 +60,11 @@ class CharlaModel extends Conexion {
         return  $this->costo ;
     }
     
-    public function getProvincia(){
-        return  $this->Provincia ;
+    public function getlugar(){
+        return  $this->lugar ;
     }
 
-    public function getCanton(){
-        return  $this->canton ;
-    }
-    public function getDistrito(){
-        return  $this->distrito ;
-    }
+  
     public function gettipo(){
         return  $this->tipo ;
     }
@@ -137,16 +130,11 @@ public function setcosto($costo){
 }
 
 
-public function setProvincia($provincia){
-    $this->provincia = $provincia;
+public function setlugar($lugar){
+    $this->lugar = $lugar;
 }
 
-public function setCanton($canton){
-    $this->canton = $canton;
-}
-public function setDistrito($distrito){
-    $this->distrito = $distrito;
-}
+
 public function settipo($tipo){
     $this->tipo = $tipo;
 }
@@ -157,8 +145,8 @@ public function setobjetivo($objetivo){
     $this->objetivo = $objetivo;
 }
 
-public function setdescripcion($lugar){
-    $this->lugar = $lugar;
+public function setdescripcion($descripcion){
+    $this->descripcion = $descripcion;
 }
 public function setconsiste($consiste){
     $this->consiste = $consiste;
@@ -215,35 +203,39 @@ public function setduracion($duracion){
 
 
     public function guardarCharla(){
-        $query = "INSERT INTO `charla` (`idPresentador`, `nombreCharla`, `fecha`, `hora`, `costo`, `tipo`, `duracion`, `formato`, `objetivo`, `descripcionCorta`, `consiste`) 
-                  VALUES (:idPresentadorPDO, :nombreCharlaPDO, :fechaPDO, :horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionPDO, :consistePDO)";
+        $query = "INSERT INTO `charla`(`idPresentador`, `nombreCharla`, `lugar`, `fecha`, `hora`, `costo`, `tipo`, `duracion`, `formato`, `objetivo`, `descripcionCorta`, `consiste`, `foto`)
+         VALUES (:idPresentadorPDO,:nombreCharlaPDO,:lugarPDO, :fechaPDO,:horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionCortaPDO, :consistePDO, :fotoPDO)";
         
         try {
             self::getConexion();
             $presentadorP = $this->getIdPresentador();
             $nombreCharlaP = $this->getNombreCharla();
-            $fechaP = $this->getfecha();
-            $horaP = $this->gethora();
-            $costoP = $this->getcosto();
-            $tipoP = $this->gettipo();
-            $duracionP = $this->getDuracion();  
-            $formatoP = $this->getformato();
+            $lugarP = $this->getlugar();
+            $fechaP= $this->getfecha();
+            $horaP= $this->gethora();
+            $costoP= $this->getcosto();
+            $tipoP= $this->gettipo();
+            $duracionP = $this->getDuracion();
+            $formatoP= $this->getformato();
             $objetivoP = $this->getobjetivo();
-            $descripcionP = $this->getdescripcion();
-            $consisteP = $this->getconsiste();
-    
+            $descripcionCortaP = $this->getdescripcion();
+            $consisteP= $this->getconsiste();
+            $posterP= $this->getposter();
+
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":idPresentadorPDO", $presentadorP, PDO::PARAM_INT);
             $resultado->bindParam(":nombreCharlaPDO", $nombreCharlaP, PDO::PARAM_STR);
-            $resultado->bindParam(":fechaPDO", $fechaP, PDO::PARAM_STR);
-            $resultado->bindParam(":horaPDO", $horaP, PDO::PARAM_STR);
-            $resultado->bindParam(":costoPDO", $costoP, PDO::PARAM_INT);
+            $resultado->bindParam(":lugarPDO", $lugarP, PDO::PARAM_STR);
+            $resultado->bindParam(":fechaPDO", $fechaP, PDO::PARAM_STR); 
+            $resultado->bindParam(":horaPDO", $horaP, PDO::PARAM_STR);  
+            $resultado->bindParam(":costoPDO", $costoP, PDO::PARAM_INT); 
             $resultado->bindParam(":tipoPDO", $tipoP, PDO::PARAM_STR);
-            $resultado->bindParam(":duracionPDO", $duracionP, PDO::PARAM_STR); 
+            $resultado->bindParam(":duracionPDO", $duracionP, PDO::PARAM_STR);
             $resultado->bindParam(":formatoPDO", $formatoP, PDO::PARAM_STR);
             $resultado->bindParam(":objetivoPDO", $objetivoP, PDO::PARAM_STR);
-            $resultado->bindParam(":descripcionPDO", $descripcionP, PDO::PARAM_STR);
+            $resultado->bindParam(":descripcionCortaPDO", $descripcionCortaP, PDO::PARAM_STR);
             $resultado->bindParam(":consistePDO", $consisteP, PDO::PARAM_STR);
+            $resultado->bindParam(":fotoPDO", $fotoP, PDO::PARAM_STR);
     
             $resultado->execute();
             self::desconectar();

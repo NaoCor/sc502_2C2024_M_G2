@@ -5,19 +5,24 @@
     $primerApellido = (isset($_POST["primerApellido"])) ? $_POST["primerApellido"] : "";
     $numero = (isset($_POST["numero"])) ? $_POST["numero"] : "";
     $correo = (isset($_POST["correo"])) ? $_POST["correo"] : "";
-    
+
+    //Charla
     $nombreCharla = (isset($_POST["nombreCharla"])) ? $_POST["nombreCharla"] : "";
-    $fecha = (isset($_POST["fecha"])) ? $_POST["fecha"] : "";
-    $hora = (isset($_POST["hora"])) ? $_POST["hora"] : "";
-    $costo = (isset($_POST["costo"])) ? $_POST["costo"] : "";
-   // $lugar = (isset($_POST["lugar"])) ? $_POST["lugar"] : "";
-    $tipo = (isset($_POST["tipo"])) ? $_POST["tipo"] : "";
+    $lugar = (isset($_POST["lugar"])) ? $_POST["lugar"] : "";
+    $fecha  = (isset($_POST["fecha"])) ? $_POST["fecha"] : "";
+    $hora   = (isset($_POST["hora"])) ? $_POST["hora"] : "";
+    $costo  = (isset($_POST["costo"])) ? $_POST["costo"] : "";
+    $tipo  = (isset($_POST["tipo"])) ? $_POST["tipo"] : "";
+    $duracion  = (isset($_POST["duracion"])) ? $_POST["duracion"] : "";
     $formato = (isset($_POST["formato"])) ? $_POST["formato"] : "";
     $objetivo = (isset($_POST["objetivo"])) ? $_POST["objetivo"] : "";
-    $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"] : "";
+    $descripcionCorta = (isset($_POST["descripcion"])) ? $_POST["descripcion"] : "";
     $consiste = (isset($_POST["consiste"])) ? $_POST["consiste"] : "";
     $poster = (isset($_POST["poster"])) ? $_POST["poster"] : "";
-    $duracion = (isset($_POST["duracion"])) ? $_POST["duracion"] : "";
+
+
+
+    //Sets de Presentador
     $charla = new CharlaModel();
     $charla->setNombre($nombre);
     $charla->setprimerApellido($primerApellido);
@@ -25,17 +30,21 @@
     $charla->setcorreo($correo);
     $charla->setIdPresentador($identificacion);
 
+    //sets Charla
+
     $charla->setNombreCharla($nombreCharla);
+    $charla->setlugar($lugar);
     $charla->setfecha($fecha);
     $charla->sethora($hora);
     $charla->setcosto($costo);
     $charla->settipo($tipo);
+    $charla->setduracion($duracion);
     $charla->setformato($formato);
     $charla->setobjetivo($objetivo);
-    $charla->setdescripcion($descripcion);
+    $charla->setdescripcion($descripcionCorta);
     $charla->setconsiste($consiste);
-    $charla->setposter($poster);
-    $charla->setduracion($duracion);
+
+
     try {
         $charla->guardarPresentador();
         $charla->guardarCharla();

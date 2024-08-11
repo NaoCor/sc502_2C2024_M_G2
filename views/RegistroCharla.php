@@ -74,20 +74,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="lugar" class="form-label">Lugar</label>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Provincia"  id="provincia">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Cantón" id="edificio">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Distrito" id="distrito">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Edificio" id=distrito>
-                            </div>
-                        </div>
+                        <input type="text" id="lugar" name="lugar" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="tipo" class="form-label">Tipo</label>
