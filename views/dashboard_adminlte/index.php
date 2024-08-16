@@ -103,11 +103,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./pantallas_admin/views/reservas.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reservas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./pantallas_admin/views/reportes.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reportes</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
                 <a href="./pantallas_admin/views/lugares_seguros.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lugares Seguros</p>
                 </a>
               </li>
+
+            
 
             </ul>
           </li>
@@ -125,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+            <h1 class="m-0">Pagina de Inicio</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -145,17 +160,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
+     
 
             <div class="card card-primary card-outline">
               <div class="card-body">
@@ -228,12 +235,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
+
+</body>
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="./assets/js/grafico.js"></script>
 </html>

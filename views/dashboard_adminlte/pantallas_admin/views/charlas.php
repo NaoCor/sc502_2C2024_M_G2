@@ -15,6 +15,13 @@
                 <div class="card-header">
                     <h3 class="card-title">Charlas existentes</h3>
                 </div>
+                
+                <div class="text-center mt-4">
+    <a href="../../../../views/RegistroCharla.php">
+        <button type="submit" class="btn-border-animate">Registrar Charla</button>
+    </a>
+</div>
+  
                 <!-- /.card-header -->
                 <div class="card-body p-0">
                     <div class="row mt-2">
