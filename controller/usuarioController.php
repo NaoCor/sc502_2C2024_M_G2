@@ -1,35 +1,32 @@
 <?php
-    require_once '../model/Usuario.php';
-    $correo = (isset($_POST["username"])) ? $_POST["username"] : "";
-    $contraseña = (isset($_POST["password"])) ? $_POST["password"] : "";
-    echo($correo);
-    $usuario = new Usuario();
-    $usuario ->setcorreo('corellanaomi@gmail.com');
-    echo($usuario->getcorreo());
-   
-    try {
-        $usuario = new Usuario();
-        $usuario ->setcorreo('corellanaomi@gmail.com');
-        // echo($usuario->getcorreo());
-        $datos_usuario = $usuario->login();
-   
-    
-        if ($datos_usuario['correo'] == 'corellanaomi@gmail.com') {
-          // echo json_encode($datos_usuario['correo']);
-        } else {
-           // echo('login no hecho');
+require_once '../model/Usuario.php';
 
-        }
+class UsuarioController {
+    private $usuarioModel;
 
-      
-    
-    } catch (PDOException $th) {
-        $resp = array("exito" => false, "msg" => "Se presento un error");
-        echo json_encode($resp);
+    public function __construct() {
+        $this->usuarioModel = new Usuario();
     }
-    
 
-    // para un solo campo
- //   $resp = array(
-   //     "idUsuario" => $datos_usuario['idUsuario']
-   // );
+    public function login($correo, $contrasena) {
+        $resultado = $this->usuarioModel->validarUsuario($correo, $contrasena);
+
+        if ($resultado) {
+            session_start();
+            $_SESSION['idUsuario'] = $resultado['idUsuario'];
+            $_SESSION['nombre'] = $resultado['nombre'];
+            echo json_encode(['status' => 'success']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Credenciales inválidas']);
+        }
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+    
+    $usuarioController = new UsuarioController();
+    $usuarioController->login($correo, $contrasena);
+}
+?>
