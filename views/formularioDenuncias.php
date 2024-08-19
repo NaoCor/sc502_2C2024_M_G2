@@ -32,8 +32,18 @@
                         <fieldset class="mb-4">
                             <legend>Información Denunciante</legend>
                             <div class="mb-3">
-                                <label for="nombre_denunciante" class="form-label">Nombre Completo</label>
+                                <label for="nombre_denunciante" class="form-label">Nombre</label>
                                 <input type="text" id="nombre_denunciante" name="nombre_denunciante"
+                                    class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="primer_apellido_denunciante" class="form-label">Primer Apellido</label>
+                                <input type="text" id="primer_apellido_denunciante" name="primer_apellido_denunciante"
+                                    class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="segundo_apellido_denunciante" class="form-label">Segundo Apellido</label>
+                                <input type="text" id="segundo_apellido_denunciante" name="segundo_apellido_denunciante"
                                     class="form-control">
                             </div>
                             <div class="mb-3">
@@ -50,8 +60,18 @@
                         <fieldset class="mb-4">
                             <legend>Información Persona Denunciada</legend>
                             <div class="mb-3">
-                                <label for="nombre_denunciado" class="form-label">Nombre Completo</label>
+                                <label for="nombre_denunciado" class="form-label">Nombre</label>
                                 <input type="text" id="nombre_denunciado" name="nombre_denunciado" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="primer_apellido_denunciado" class="form-label">Primer Apellido</label>
+                                <input type="text" id="primer_apellido_denunciado" name="primer_apellido_denunciado"
+                                    class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="segundo_apellido_denunciado" class="form-label">Segundo Apellido</label>
+                                <input type="text" id="segundo_apellido_denunciado" name="segundo_apellido_denunciado"
+                                    class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="relacion_agresor" class="form-label">Relación</label>
