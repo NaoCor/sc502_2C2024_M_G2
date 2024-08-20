@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6f42c1;">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
@@ -36,13 +39,28 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../views/dashboard_adminlte/index.php" style="color: white;">Admin</a>
-                </li>
+                <?php if (isset($_SESSION['idRol']) && $_SESSION['idRol'] == 1): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../views/dashboard_adminlte/index.php" style="color: white;">Admin</a>
+                    </li>
+                <?php endif; ?>
             </ul>
-            <a href="./inicioSesion.php" class="d-flex ms-auto">
-                <img src="./assets/img/avatar.png" alt="" style="height: 40px;">
-            </a>
+
+            <?php if (isset($_SESSION['idUsuario'])): ?>
+                <div class="dropdown ms-auto">
+                    <a href="#" class="d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./assets/img/avatar.png" alt="" style="height: 40px;">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="../controller/UsuarioController.php?logout=true">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <a href="./inicioSesion.php" class="d-flex ms-auto">
+                    <img src="./assets/img/avatar.png" alt="" style="height: 40px;">
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
+
