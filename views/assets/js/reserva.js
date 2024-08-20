@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('#reserva').on('submit', function(e) {
         e.preventDefault();
+        var idCharla = $('#submitReserva').val();
         var formData = new FormData($('#reserva')[0])
         $.ajax({
             url: '../controller/reservaController.php',
@@ -12,12 +13,7 @@ $(document).ready(function() {
                 Swal.fire({
                     icon: 'success',
                     title: '¡Reserva registrada!',
-                    text: 'La reserva se ha registrado correctamente.',
-                    timer: 1500,
-                    timerProgressBar: true,
-                    willClose: () => {
-                        window.location.href = '../views/informacion.php'; 
-                    }
+                    text: 'La reserva se ha registrado correctamente.'
                 })
                 },
                 error: function() {

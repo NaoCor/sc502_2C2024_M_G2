@@ -19,14 +19,16 @@ class graficoReservaModel extends Conexion {
             self::getConexion();
 
             $query = "SELECT 
-                        R.nombre, 
-                        COUNT(R.idReserva) AS total_reservas
-                    FROM 
-                        reserva R
-                    GROUP BY 
-                        R.nombre
-                    ORDER BY 
-                        total_reservas DESC;";
+            C.nombreCharla nombre, 
+            COUNT(R.idCharla) AS total_reservas
+        FROM 
+            reserva R
+            
+            INNER JOIN charla C on R.idCharla=C.idCharla
+        GROUP BY 
+            C.nombreCharla
+        ORDER BY 
+            total_reservas DESC;";
 
             $stmt = self::$cnx->prepare($query);
             $stmt->execute();

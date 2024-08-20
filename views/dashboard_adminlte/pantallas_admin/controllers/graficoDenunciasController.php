@@ -1,23 +1,32 @@
 <?php
 require_once '../models/GraficoDenunciasModel.php';
 
-$op = $_GET['op'];
 
-switch ($op) {
-    case 'cargar_grafico':
-        $modelo = new graficoModel();
-        
-        $datos = $modelo->cargarGrafico();
-        
-        if ($datos !== false) {
-            echo json_encode($datos);
-        } else {
-            echo json_encode(['error' => 'No se pudieron obtener los datos']);
+
+        $grafico = new graficoModel();
+        $datos = $grafico->cargarGrafico(); 
+
+        $data = array();
+        $labels = array();
+        $values = array();
+
+
+        foreach ($datos as $reg) {
+             $labels[] = $reg['tipo'];
+             $values[] = $reg['cantidad']; 
         }
-        break;
 
-    default:
-        echo "Operación no válida";
-        break;
-}
+        $datos = array(
+             "labels" => $labels,
+             "data" => $values
+        );
+
+
+
+        
+        echo json_encode($datos);
+     
+
+   
+
 ?>

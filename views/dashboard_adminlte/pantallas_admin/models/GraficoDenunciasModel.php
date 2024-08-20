@@ -2,22 +2,15 @@
 require_once '../../../../config/Conexion.php';
 
 class graficoModel extends Conexion {
-    /*=============================================
-    =            Atributos de la Clase            =
-    =============================================*/
-    protected static $cnx;
-    /=====  End of Atributos de la Clase  ======/
 
-    /*=============================================
-    =            Constructores de la Clase          =
-    =============================================*/
+    protected static $cnx;
+ 
+
     public function __construct() {
     }
-    /=====  End of Constructores de la Clase  ======/
+ 
 
-    /*=============================================
-    =            Métodos de la Clase              =
-    =============================================*/
+  
     public static function getConexion(){
         self::$cnx = Conexion::conectar();
     }

@@ -47,11 +47,20 @@
                             <h6 class="card-subtitle mb-2"><?php echo $charla['lugar']?></h6>
                             <div class="border-top my-3"></div>
                             <form id="reserva">
+
+                            <div class="mb-1" style="display: none;">
+                            <input type="hidden" id="charla" name="charla" value="<?php echo $_GET['categoria']; ?>">
+                                    </div>
+
+
+
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre">
                                     <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="apellido" name="apellido">
                                   
                                 </div>
+
+
                                 <div class="mb-3">
                                     <label for="cedula">Identificacion</label>
                                     <input type="text" id="cedula" name="cedula" class="form-control"
@@ -86,7 +95,7 @@
                    
                         </select>
                                 <div style="text-align: right; margin-top: 20px;">
-                                    <button type="submit"  class="btn-border-animate" style="background-color: #6477e4; color: white; border-color: #6477e4;" >Registrar</button>
+                                    <button type="submit"  class="btn-border-animate" style="background-color: #6477e4; color: white; border-color: #6477e4;" value= <?php $idCharla = $_GET["categoria"]?>>Registrar</button>
                                     <button type="button"  class="btn-border-animate" style="background-color: #6477e4; color: white; border-color: #6477e4;">Cancelar</button>
                                 </div>
                             </form>

@@ -12,7 +12,7 @@ require_once '../models/GraficoModel.php';
 
 
         foreach ($datos as $reg) {
-             $labels[] = $reg['nombreCharla'];
+             $labels[] = $reg['nombre'];
              $values[] = $reg['total_reservas']; 
         }
 

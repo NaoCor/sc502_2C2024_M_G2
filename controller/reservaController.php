@@ -7,7 +7,7 @@
     $entradas = (isset($_POST["entrada"])) ? $_POST["entrada"] : "";
     $total=   (isset($_POST["total"])) ? $_POST["total"] : "";
     $metodoPago=(isset($_POST["metodo"])) ? $_POST["metodo"] : "";
-    $idCharla= 1; //este valor tiene que ser un hidden input cambiarlo
+    $idCharla= (isset($_POST["charla"])) ? $_POST["charla"] : "";
 
 
     $reserva = new ReservaModel();
