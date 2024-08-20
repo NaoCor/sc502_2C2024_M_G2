@@ -128,12 +128,6 @@
 
 
 
-<div class="text-center mt-4">
-    <a href="./RegistroCharla.php">
-        <button type="submit" class="btn-border-animate">Registrar Charla</button>
-    </a>
-</div>
-  
     <footer>
         <?php
          include './footer.php'

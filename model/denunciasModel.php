@@ -150,13 +150,18 @@ class DenunciasModel extends Conexion {
         $query = "INSERT INTO Denunciante (nombre, primer_apellido, segundo_apellido, correo, numero_telefonico) 
                 VALUES (:nombrePDO, :primer_apellidoPDO, :segundo_apellidoPDO, :correo_denunciantePDO, :telefono_denunciantePDO)";
         try {
+            $nombreP =$this->getNombre_denunciante();
+            $primerApellidoP = $this->getPrimer_apellido_denunciante();
+            $segundoApellidoP = $this->getSegundo_apellido_denunciante();
+            $correoP =$this->getCorreo_denunciante();
+            $telefonoP=$this->getTelefono_denunciante();
             self::getConexion();
             $resultado = self::$cnx->prepare($query); 
-            $resultado->bindParam(':nombrePDO', $this->getNombre_denunciante(), PDO::PARAM_STR);
-            $resultado->bindParam(':primer_apellidoPDO', $this->getPrimer_apellido_denunciante(), PDO::PARAM_STR);
-            $resultado->bindParam(':segundo_apellidoPDO', $this->getSegundo_apellido_denunciante(), PDO::PARAM_STR);
-            $resultado->bindParam(':correo_denunciantePDO', $this->getCorreo_denunciante(), PDO::PARAM_STR);
-            $resultado->bindParam(':telefono_denunciantePDO', $this->getTelefono_denunciante(), PDO::PARAM_STR);
+            $resultado->bindParam(':nombrePDO', $nombreP, PDO::PARAM_STR);
+            $resultado->bindParam(':primer_apellidoPDO', $primerApellidoP, PDO::PARAM_STR);
+            $resultado->bindParam(':segundo_apellidoPDO', $segundoApellidoP, PDO::PARAM_STR);
+            $resultado->bindParam(':correo_denunciantePDO', $correoP, PDO::PARAM_STR);
+            $resultado->bindParam(':telefono_denunciantePDO', $telefonoP, PDO::PARAM_STR);
             $resultado->execute();
             $this->idDenunciante = self::$cnx->lastInsertId(); // Obtener el ID del denunciante
             self::desconectar();
@@ -170,11 +175,15 @@ class DenunciasModel extends Conexion {
         $query = "INSERT INTO Denunciado (nombre, primer_apellido, segundo_apellido) 
                 VALUES (:nombrePDO, :primer_apellidoPDO, :segundo_apellidoPDO)";
         try {
+
+            $nombreP =$this->getNombre_denunciado();
+            $primerApellidoP = $this->getPrimer_apellido_denunciado();
+            $segundoApellidoP = $this->getSegundo_apellido_denunciado();
             self::getConexion();
             $resultado = self::$cnx->prepare($query); 
-            $resultado->bindParam(':nombrePDO', $this->getNombre_denunciado(), PDO::PARAM_STR);
-            $resultado->bindParam(':primer_apellidoPDO', $this->getPrimer_apellido_denunciado(), PDO::PARAM_STR);
-            $resultado->bindParam(':segundo_apellidoPDO', $this->getSegundo_apellido_denunciado(), PDO::PARAM_STR);
+            $resultado->bindParam(':nombrePDO',$nombreP , PDO::PARAM_STR);
+            $resultado->bindParam(':primer_apellidoPDO', $primerApellidoP, PDO::PARAM_STR);
+            $resultado->bindParam(':segundo_apellidoPDO', $segundoApellidoP,PDO::PARAM_STR);
             $resultado->execute();
             $this->idDenunciado = self::$cnx->lastInsertId(); // Obtener el ID del denunciado
             self::desconectar();
@@ -188,17 +197,24 @@ class DenunciasModel extends Conexion {
         $query = "INSERT INTO Denuncia (idDenunciado, idDenunciante, tipo, fecha, lugar, relacion_agresor, documentacion) 
                 VALUES (:idDenunciadoPDO, :idDenunciantePDO, :tipoPDO, :fechaPDO, :lugarPDO, :relacion_agresorPDO, :documentacionPDO)";
         try {
+
+
+            $lugarP = $this->getLugar();
+            $fechaP = $this->getFecha();
+            $tipoP = $this->getTipo();
+           $relacionP= $this->getRelacion_agresor();
+           $documentacionP =$this->getDocumentacion();
             self::getConexion();
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(':idDenunciadoPDO', $this->idDenunciado, PDO::PARAM_INT);
             $resultado->bindParam(':idDenunciantePDO', $this->idDenunciante, PDO::PARAM_INT);
-            $resultado->bindParam(':tipoPDO', $this->getTipo(), PDO::PARAM_STR);
-            $resultado->bindParam(':fechaPDO', $this->getFecha(), PDO::PARAM_STR);
-            $resultado->bindParam(':lugarPDO', $this->getLugar(), PDO::PARAM_STR);
-            $resultado->bindParam(':relacion_agresorPDO', $this->getRelacion_agresor(), PDO::PARAM_STR);
-            $resultado->bindParam(':documentacionPDO', $this->getDocumentacion(), PDO::PARAM_STR);
+            $resultado->bindParam(':tipoPDO', $tipoP, PDO::PARAM_STR);
+            $resultado->bindParam(':fechaPDO', $fechaP, PDO::PARAM_STR);
+            $resultado->bindParam(':lugarPDO', $lugarP, PDO::PARAM_STR);
+            $resultado->bindParam(':relacion_agresorPDO', $relacionP, PDO::PARAM_STR);
+            $resultado->bindParam(':documentacionPDO', $documentacionP, PDO::PARAM_STR);
             $resultado->execute();
-            $this->idDenuncia = self::$cnx->lastInsertId(); // Obtener el ID del denunciante
+            $this->idDenuncia = self::$cnx->lastInsertId(); 
             self::desconectar();
         } catch (PDOException $ex) {
             self::desconectar();

@@ -114,11 +114,17 @@
                         <div class="text-center mt-4 " style="margin: 0 10px">
                             <button type="submit" class="btn-border-animate"
                                 style="background-color: #6200EA; color: white; border-color:  #6200EA">Enviar</button>
+
                             <button type="reset" class="btn-border-animate"
                                 style="background-color: #6200EA; color: white; border-color: #6200EA">Cancelar</button>
                         </div>
                         
                     </form>
+
+
+
+
+
                 </div>
             </div>
             <div class="col-md-5 ">
@@ -181,9 +187,11 @@
     ?>
 </footer>
 
+
+</body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./assets/js/denuncias.js"></script>
-</body>
+
 </html>
 
