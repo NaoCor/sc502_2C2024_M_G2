@@ -13,7 +13,12 @@ $(document).ready(function() {
                 Swal.fire({
                     icon: 'success',
                     title: '¡Charla registrada!',
-                    text: 'La charla se ha registrado correctamente.'
+                    text: 'La charla se ha registrado correctamente.',
+                    timer: 1500,
+                            timerProgressBar: true,
+                            willClose: () => {
+                                window.location.href = '../views/informacion.php'; 
+                            }
                 })
                 },
                 error: function() {

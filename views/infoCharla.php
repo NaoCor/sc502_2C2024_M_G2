@@ -64,10 +64,11 @@
             </div>
             <div class="col-md-4">
                 <div class="text-center">
-                    <figure>
-                        <img src="https://definicion.de/wp-content/uploads/2011/09/charla-1.jpg"
-                            alt="Imagen de abuso físico" class="img-fluid rounded" style="max-width: 100%;">
-                    </figure>
+                <figure>
+    <img src="<?php echo $charla['foto']; ?>"
+         alt="Imagen de Charla" class="img-fluid rounded" style="max-width: 100%;">
+</figure>
+
                 </div>
                 <div class="card card-info">
                     <div class="card-body info-section">
@@ -76,7 +77,7 @@
                         <p class="card-text">Fecha:  <?php echo $charla['fecha'];     ?> </p>
                         <p class="card-text">Hora:  <?php echo $charla['hora'];     ?> </p>
                         <p class="card-text">Costo x entrada: <?php echo $charla['costo'];     ?> </p>
-                        <p class="card-text">Lugar:  <?php echo $charla['idProvincia'];    //cambiar por lugar ?> </p> 
+                        <p class="card-text">Lugar:  <?php echo $charla['lugar'];    //cambiar por lugar ?> </p> 
                         <p class="card-text">Tipo: <?php echo $charla['tipo'];     ?> </p>
                         <p class="card-text">Duración:<?php echo $charla['duracion'];     ?> </p>
                         <p class="card-text">Formato : <?php echo $charla['formato'];     ?> </p>

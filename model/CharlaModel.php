@@ -209,12 +209,13 @@ public function setduracion($duracion){
         try {
             $posterP = "";
             if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES['foto']['tmp_name'];
+                $tmp_name = $_FILES['foto']['foto'];
                 $name = $_FILES['foto']['name'];
                 $upload_dir = '../uploads/';
                 $posterP = $upload_dir . basename($name);
                 move_uploaded_file($tmp_name, $posterP);
-            
+            }
+        
             $presentadorP = $this->getIdPresentador();
             $nombreCharlaP = $this->getNombreCharla();
             $lugarP = $this->getlugar();
@@ -228,7 +229,7 @@ public function setduracion($duracion){
             $descripcionCortaP = $this->getdescripcion();
             $consisteP= $this->getconsiste();
             $posterP= $this->getposter();
-
+        
             self::getConexion();
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":idPresentadorPDO", $presentadorP, PDO::PARAM_INT);
@@ -243,7 +244,7 @@ public function setduracion($duracion){
             $resultado->bindParam(":objetivoPDO", $objetivoP, PDO::PARAM_STR);
             $resultado->bindParam(":descripcionCortaPDO", $descripcionCortaP, PDO::PARAM_STR);
             $resultado->bindParam(":consistePDO", $consisteP, PDO::PARAM_STR);
-            $resultado->bindParam(":fotoPDO", $fotoP, PDO::PARAM_STR);
+            $resultado->bindParam(":fotoPDO", $posterP, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $ex) {
@@ -251,10 +252,10 @@ public function setduracion($duracion){
             $error = "Error ".$ex->getCode().": ".$ex->getMessage();
             return json_encode($error);
         }
-    }
+        
     
     
-    
+}
 }
 
 ?>

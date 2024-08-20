@@ -44,7 +44,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Inscripción a conferencia: <?php echo $charla['nombreCharla']?></h5>
-                            <h6 class="card-subtitle mb-2"><?php echo $charla['idProvincia']//cambiar porlugar?></h6>
+                            <h6 class="card-subtitle mb-2"><?php echo $charla['lugar']?></h6>
                             <div class="border-top my-3"></div>
                             <form id="reserva">
                                 <div class="input-group mb-3">
@@ -100,7 +100,8 @@
     <footer>
         <?php include './footer.php'; ?>
     </footer>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

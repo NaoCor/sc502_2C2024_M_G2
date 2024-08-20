@@ -12,7 +12,12 @@ $(document).ready(function() {
                 Swal.fire({
                     icon: 'success',
                     title: '¡Reserva registrada!',
-                    text: 'La reserva se ha registrado correctamente.'
+                    text: 'La reserva se ha registrado correctamente.',
+                    timer: 1500,
+                    timerProgressBar: true,
+                    willClose: () => {
+                        window.location.href = '../views/informacion.php'; 
+                    }
                 })
                 },
                 error: function() {
