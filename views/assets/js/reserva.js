@@ -8,12 +8,20 @@ $(document).ready(function() {
             data: formData, 
             contentType :  false,
             processData  : false,
-            success: function(response) {
-                $('#response').html('<div class="alert alert-success">Cita programada exitosamente!</div>');
-            },
-            error: function(err) {
-                $('#response').html('<div class="alert alert-danger">Error al programar la cita.</div>');
-            }
+            success: function(data) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Reserva registrada!',
+                    text: 'La reserva se ha registrado correctamente.'
+                })
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ay no...',
+                        text: 'Algo salió mal. Por favor, intenta de nuevo.'
+                    });
+                }
         });
     });
 });

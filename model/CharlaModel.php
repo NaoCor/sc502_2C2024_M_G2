@@ -204,10 +204,17 @@ public function setduracion($duracion){
 
     public function guardarCharla(){
         $query = "INSERT INTO `charla`(`idPresentador`, `nombreCharla`, `lugar`, `fecha`, `hora`, `costo`, `tipo`, `duracion`, `formato`, `objetivo`, `descripcionCorta`, `consiste`, `foto`)
-         VALUES (:idPresentadorPDO,:nombreCharlaPDO,:lugarPDO, :fechaPDO,:horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionCortaPDO, :consistePDO, :fotoPDO)";
+        VALUES (:idPresentadorPDO,:nombreCharlaPDO,:lugarPDO, :fechaPDO,:horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionCortaPDO, :consistePDO, :fotoPDO)";
         
         try {
-            self::getConexion();
+            $posterP = "";
+            if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES['foto']['tmp_name'];
+                $name = $_FILES['foto']['name'];
+                $upload_dir = '../uploads/';
+                $posterP = $upload_dir . basename($name);
+                move_uploaded_file($tmp_name, $posterP);
+            
             $presentadorP = $this->getIdPresentador();
             $nombreCharlaP = $this->getNombreCharla();
             $lugarP = $this->getlugar();
@@ -222,6 +229,7 @@ public function setduracion($duracion){
             $consisteP= $this->getconsiste();
             $posterP= $this->getposter();
 
+            self::getConexion();
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":idPresentadorPDO", $presentadorP, PDO::PARAM_INT);
             $resultado->bindParam(":nombreCharlaPDO", $nombreCharlaP, PDO::PARAM_STR);
@@ -236,7 +244,6 @@ public function setduracion($duracion){
             $resultado->bindParam(":descripcionCortaPDO", $descripcionCortaP, PDO::PARAM_STR);
             $resultado->bindParam(":consistePDO", $consisteP, PDO::PARAM_STR);
             $resultado->bindParam(":fotoPDO", $fotoP, PDO::PARAM_STR);
-    
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $ex) {

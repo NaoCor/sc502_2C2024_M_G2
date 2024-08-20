@@ -197,13 +197,21 @@ class DenunciasModel extends Conexion {
         $query = "INSERT INTO Denuncia (idDenunciado, idDenunciante, tipo, fecha, lugar, relacion_agresor, documentacion) 
                 VALUES (:idDenunciadoPDO, :idDenunciantePDO, :tipoPDO, :fechaPDO, :lugarPDO, :relacion_agresorPDO, :documentacionPDO)";
         try {
-
+            $documentacionP = "";
+            if (isset($_FILES['documentacion']) && $_FILES['documentacion']['error'] == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES['documentacion']['tmp_name'];
+                $name = $_FILES['documentacion']['name'];
+                $upload_dir = '../uploads/';
+                $documentacionP = $upload_dir . basename($name);
+                move_uploaded_file($tmp_name, $documentacionP);
+            }
 
             $lugarP = $this->getLugar();
             $fechaP = $this->getFecha();
             $tipoP = $this->getTipo();
-           $relacionP= $this->getRelacion_agresor();
-           $documentacionP =$this->getDocumentacion();
+            $relacionP = $this->getRelacion_agresor();
+            $documentacionP = $documentacionP;
+            
             self::getConexion();
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(':idDenunciadoPDO', $this->idDenunciado, PDO::PARAM_INT);

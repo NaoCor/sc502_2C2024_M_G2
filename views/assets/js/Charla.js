@@ -9,12 +9,20 @@ $(document).ready(function() {
             data: formData, 
             contentType :  false,
             processData  : false,
-            success: function(response) {
-                $('#response').html('<div class="alert alert-success">Cita programada exitosamente!</div>');
-            },
-            error: function(err) {
-                $('#response').html('<div class="alert alert-danger">Error al programar la cita.</div>');
-            }
+            success: function(data) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Charla registrada!',
+                    text: 'La charla se ha registrado correctamente.'
+                })
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ay no...',
+                        text: 'Algo salió mal. Por favor, intenta de nuevo.'
+                    });
+                }
         });
     });
 });

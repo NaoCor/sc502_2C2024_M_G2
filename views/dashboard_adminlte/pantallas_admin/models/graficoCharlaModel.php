@@ -1,7 +1,7 @@
 <?php
 require_once '../../../../config/Conexion.php';
 
-class graficoReservaModel extends Conexion {
+class graficoCharlaModel extends Conexion {
     protected static $cnx;
 
     public function __construct() {}
@@ -19,14 +19,14 @@ class graficoReservaModel extends Conexion {
             self::getConexion();
 
             $query = "SELECT 
-                        R.nombre, 
-                        COUNT(R.idReserva) AS total_reservas
+                        C.tipo, 
+                        COUNT(C.idCharla) AS total_charlas
                     FROM 
-                        reserva R
+                        charla C
                     GROUP BY 
-                        R.nombre
+                        C.tipo
                     ORDER BY 
-                        total_reservas DESC;";
+                        total_charlas DESC;";
 
             $stmt = self::$cnx->prepare($query);
             $stmt->execute();
@@ -34,7 +34,7 @@ class graficoReservaModel extends Conexion {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch(PDOException $e) {
-            echo 'Error al cargar reservas: ' . $e->getMessage();
+            echo 'Error al cargar charlas: ' . $e->getMessage();
             return false;
         }
     }
