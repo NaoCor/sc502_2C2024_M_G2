@@ -55,8 +55,8 @@
 
 
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre">
-                                    <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="apellido" name="apellido">
+                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre" required>
+                                    <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="apellido" name="apellido" required>
                                   
                                 </div>
 
@@ -64,17 +64,17 @@
                                 <div class="mb-3">
                                     <label for="cedula">Identificacion</label>
                                     <input type="text" id="cedula" name="cedula" class="form-control"
-                                       >
+                                       required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" name="email">
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 
                                 <div class="mb-1">
                                      <label for="entrada" class="form-label">Entradas</label>
-                                     <input type="number" class="form-control" id="entrada" name="entrada" min="1" value="1" oninput="totalPago()">
+                                     <input type="number" class="form-control" id="entrada" name="entrada" min="1" value="1" oninput="totalPago()" required>
                                 </div>
 
                                 <div class="mb-1" style="display: none;">
@@ -88,7 +88,7 @@
                                 </div>
 
                                 <h6>Metodo de Pago</h6>
-                                <select class="form-select" aria-label="Default select example" id="metodo" name="metodo">
+                                <select class="form-select" aria-label="Default select example" id="metodo" name="metodo" >
                       
                                 <option value="SinpeMovil">SinpeMovil</option>
                                 <option value="Tarjeta">Tarjeta</option>
