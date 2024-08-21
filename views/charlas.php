@@ -27,11 +27,13 @@
 
 
 
-<section>
+    <section>
     <?php
     include '../config/Conexion.php';
     $cnx = Conexion::conectar();
-    $query = "SELECT * FROM charla"; 
+    $query = "SELECT * 
+            FROM charla
+            WHERE fecha > CURDATE();"; 
     $sql = $cnx->prepare($query);
     $sql->execute();
     $charlas = $sql->fetchAll();

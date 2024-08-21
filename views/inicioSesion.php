@@ -27,7 +27,6 @@
             <label for="password" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="password" name="contrasena" required>
         </div>
-        <div class="recordar">¿Olvidaste tu contraseña?</div>
         <button type="submit" class="btn btn-primary w-80">Iniciar Sesión</button>
         <a href="registro.php" class="btn btn-primary w-80">Registrarse</a>
     </form>

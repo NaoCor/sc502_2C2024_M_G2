@@ -15,7 +15,7 @@ class Denuncia extends Conexion
     private $lugar = null;
     private $relacionAgresor = null;
     private $documentacion = null;
-    private $estado = null;  // Agregado nuevo atributo
+    private $estado = null;  
     /*=====  End of Atributos de la Clase  ======*/
 
     /*=============================================
@@ -85,11 +85,11 @@ class Denuncia extends Conexion
         $this->documentacion = $documentacion; 
     }
 
-    public function getEstado() {  // Getter para estado
+    public function getEstado() { 
         return $this->estado; 
     }
 
-    public function setEstado($estado) {  // Setter para estado
+    public function setEstado($estado) {  
         $this->estado = $estado; 
     }
     /*=====  End of Encapsuladores de la Clase  ======*/
@@ -126,7 +126,7 @@ class Denuncia extends Conexion
                 $denuncia->setLugar($encontrado['lugar']);
                 $denuncia->setRelacionAgresor($encontrado['relacion_agresor']);
                 $denuncia->setDocumentacion($encontrado['documentacion']);
-                $denuncia->setEstado($encontrado['estado']);  // Agregado para estado
+                $denuncia->setEstado($encontrado['estado']); 
                 $arr[] = $denuncia;
             }
             return $arr;

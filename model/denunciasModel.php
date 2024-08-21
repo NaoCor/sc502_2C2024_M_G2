@@ -27,7 +27,7 @@ class DenunciasModel extends Conexion {
     private $idDenunciado;
     private $idDenuncia;
 
-    // Métodos getter y setter
+
     public function getNombre_denunciante() {
         return $this->nombre_denunciante;
         }

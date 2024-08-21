@@ -59,8 +59,6 @@ function activar(idConsulta) {
     });
 }
 
-
-
 function desactivar(idConsulta) {
     bootbox.confirm('¿Está seguro de quitar esta consulta pública?', function (result) {
         if (result) {
@@ -85,7 +83,6 @@ function desactivar(idConsulta) {
         }
     });
 }
-
 
 function responder(idConsulta) {
     bootbox.prompt({
@@ -117,6 +114,4 @@ function responder(idConsulta) {
         }
     });
 }
-
-
 

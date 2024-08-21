@@ -17,7 +17,7 @@
                 </div>
                 
                 <div class="text-center mt-4">
-    <a href="../../../../views/RegistroCharla.php">
+                <a href="../../../../views/RegistroCharla.php">
         <button type="submit" class="btn-border-animate">Registrar Charla</button>
     </a>
 </div>
@@ -31,7 +31,7 @@
                                 class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <th>ID</th>
-                                    
+                                    <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
                                     <th>Costo</th>
@@ -42,13 +42,13 @@
                                     <th>Descripcion Corta</th>
                                     <th>Consiste </th>
                                     <th>Foto</th>
-                                    <th>Opciones</th>
+                                    
                                 </thead>
                                 <tbody>
                                 </tbody>
                                 <tfooter>
                                     <th>ID</th>
-                                    
+                                    <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
                                     <th>Costo</th>
@@ -59,7 +59,7 @@
                                     <th>Descripcion Corta</th>
                                     <th>Consiste </th>
                                     <th>Foto</th>
-                                    <th>Opciones</th>
+                                
                                 </tfooter>
                             </table>
                         </div>
@@ -76,6 +76,6 @@
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="plugins/bootbox/bootbox.min.js"></script>
     <script src="plugins/toastr/toastr.js"></script>
-    <script src="assets/js/usuario.js"></script>
+    <script src="assets/js/charla.js"></script>
 </body>
 </html>

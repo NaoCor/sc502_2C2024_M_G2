@@ -78,6 +78,16 @@ section {
     background-color: #495057;
 }
 
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #6200EA;
+    font-size: 48px;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in-out;
+}
+
 
 
 .card-container {

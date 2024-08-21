@@ -21,7 +21,9 @@
         ?>
     </header>
   
+    <h1>ACOSO</h1>
     <section class="section-header">
+    
         <figure>
             <img src="https://www.shutterstock.com/image-vector/teenage-stress-depressed-teens-unhappy-600nw-2402268227.jpg"
                 alt="Imagen de acoso" class="img-fluid rounded" width="600">

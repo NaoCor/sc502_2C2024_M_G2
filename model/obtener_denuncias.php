@@ -4,7 +4,6 @@ require_once '../config/Conexion.php';
 try {
     $conn = Conexion::conectar();
     
-    // Consulta para seleccionar las denuncias con estado true (1)
     $sql = 'SELECT idDenuncia, fecha, lugar, relacion_agresor FROM Denuncia WHERE estado = 1';
     $stmt = $conn->prepare($sql);
     $stmt->execute();

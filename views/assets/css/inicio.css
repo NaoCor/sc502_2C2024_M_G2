@@ -6,7 +6,7 @@ body {
   height: 100vh;
 }
 
-.formulario{
+.formulario {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,69 +14,56 @@ body {
   width: 400px;
   background: white;
   border-radius: 10px;
+  padding-bottom: 20px;
 }
 
-.formulario h1{
+.formulario h1 {
   text-align: center;
-  padding: 0 0 20px 0;
+  padding: 20px;
   border-bottom: 1px solid silver;
 }
 
-.formulario form{
-  padding: 0 40px;
+.formulario form {
+  padding: 20px 40px;
   box-sizing: border-box;
 }
 
-form .username{
+form .username {
   position: relative;
-  border-bottom: 2px solid #adadad;
   margin: 30px 0;
 }
 
-.username input{
+.username input {
   width: 100%;
-  padding: 0 5px;
+  padding: 10px 5px;
   height: 40px;
-  font-size: 16 px;
-  border: none;
-  background:none ;
+  font-size: 16px;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  background: none;
   outline: none;
+  box-sizing: border-box;
 }
 
-.username label{
+.username label {
   position: absolute;
-  top: 50%;
+  top: -20px;
   left: 5px;
-  color: #adadad;
-  transform: translateY(-50%);
+  color: #6C3483;
   font-size: 16px;
   pointer-events: none;
   transition: .5s;
 }
 
-.username span::before {
-  content: '';
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #6C3483;
-  transition: .5s;
-}
-
 .username input:focus ~ label,
-.username input:focus ~ label   {
-  top: -5px;
+.username input:not(:placeholder-shown) ~ label {
+  top: -20px;
+  left: 5px;
   color: #6C3483;
+  font-size: 14px;
 }
 
-.username input:focus ~ span::before,
-.username input:focus ~ span::before   {
-  width: 100%;
-}
-
-.recordar{
+.recordar {
   margin: -5px 0 20px 5px;
   color: blue;
   cursor: pointer;
@@ -86,7 +73,7 @@ form .username{
   text-decoration: underline;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -98,19 +85,19 @@ input[type="submit"]{
   outline: none;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   border-color: purple;
   transition: .5s;
 }
 
-.registrarse{
-margin: 30px 0;
-text-align: center;
-font-size: 16px;
-color: black;
+.registrarse {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: black;
 }
 
-.registrarse a{
+.registrarse a {
   color: blue;
   text-decoration: none;
 }
@@ -118,3 +105,4 @@ color: black;
 .registrarse a:hover {
   text-decoration: underline;
 }
+

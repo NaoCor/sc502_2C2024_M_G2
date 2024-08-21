@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Fecha:</strong> ${new Date(denuncia.fecha).toLocaleDateString()}</p>
                 <p><strong>Lugar:</strong> ${denuncia.lugar || 'No especificado'}</p>
                 <p><strong>Descripción:</strong> ${denuncia.relacion_agresor || 'No disponible'}</p>
-                <a href="#">Ver más detalles</a>
+                
             `;
 
             foroContainer.appendChild(denunciaItem);

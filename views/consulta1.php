@@ -36,28 +36,42 @@
                     </div>
                 </div>
 
-                <div class="pregunta card mb-4">
-                    <div class="card-body">
-                        <div class="usuario d-flex align-items-center mb-3">
-                            <img src="./assets/img/avatar.png" alt="" class="avatar-img">
-                            <div class="ms-3">
-                                <p class="mb-1 fw-bold">Nombre de Usuario</p>
-                                <p class="mb-0 text-muted">dd/mm/yyyy</p>
-                            </div>
-                        </div>
-                        <div class="contenido-pregunta mb-3">
-                            <p class="fw-bold">Pregunta:</p>
-                            <p>Lorem ipsum dolor sit amet...</p>
-                        </div>
-                        <div class="respuesta">
-                            <p class="fw-bold">Respuesta hecha por:</p>
-                            <p>Nombre administrador</p>
+                <?php
+                include '../config/Conexion.php';
+
+                $cnx = Conexion::conectar();
+                $query = "SELECT c.idConsulta, c.pregunta, r.respuesta 
+                        FROM consulta c 
+                         LEFT JOIN respuesta r ON c.idConsulta = r.idConsulta
+                        WHERE c.estado = 1"; 
+                $sql = $cnx->prepare($query);
+                $sql->execute();
+                $consultas = $sql->fetchAll();
+                ?>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($consultas as $consulta) { ?>
+                                <div class="consulta-item card mb-3">
+                                    <div class="card-body">
+                                     <h3>Consulta #<?php echo $consulta['idConsulta']; ?></h3>
+                                        <p><?php echo $consulta['pregunta']; ?></p>
+
+                                        <div class="respuesta">
+                                            <h6>Respuesta:</h6>
+                                            <p><?php echo $consulta['respuesta'] ? $consulta['respuesta'] : 'Aún no hay respuesta.'; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
-                </div>
+                </section>
+
             </section>
 
-            <!-- FAQ Section -->
+            <!-- FAQ  -->
             <aside class="col-md-4 faq">
                 <h2>Preguntas Frecuentes</h2>
                 <div class="accordion" id="accordionFlushExample">

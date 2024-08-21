@@ -34,7 +34,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Aquí se añadirán las filas dinámicamente -->
+
                             </tbody>
                             <tfoot>
                                 <tr>

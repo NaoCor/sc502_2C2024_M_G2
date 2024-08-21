@@ -15,19 +15,41 @@
         include './header.php'
         ?>
 </header>
-    <div class="consultas-container">
-        <h2>Foro de Consultas</h2>
-        <div class="consulta-item">
-            <h3>Consulta #1</h3>
-            <p><strong>Fecha:</strong> xx/xx/xxxx</p>
-            <p><strong>Consultante:</strong> Nombre del Consultante</p>
-            <p><strong>Consulta:</strong> ¿?</p>
 
+
+<?php
+include '../config/Conexion.php';
+
+
+$cnx = Conexion::conectar();
+$query = "SELECT c.idConsulta, c.pregunta, r.respuesta 
+          FROM consulta c 
+          LEFT JOIN respuesta r ON c.idConsulta = r.idConsulta
+          WHERE c.estado = 1"; 
+$sql = $cnx->prepare($query);
+$sql->execute();
+$consultas = $sql->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
+<div class="consultas-container">
+    <h2>Foro de Consultas</h2>
+    <?php foreach ($consultas as $consulta) { ?>
+        <div class="consulta-item">
+            <h3>Consulta #<?php echo $consulta['idConsulta']; ?></h3>
+            <p><strong>Consulta:</strong> <?php echo $consulta['pregunta']; ?></p>
             <div class="respuesta">
                 <h4>Respuesta:</h4>
-                <p> [inserte respuesta aquí].</p>
+                <p><?php echo $consulta['respuesta'] ? $consulta['respuesta'] : 'Aún no hay respuesta.'; ?></p>
             </div>
         </div>
+    <?php } ?>
+</div>
+
+
+
+
+
     <footer>
         <?php
          include './footer.php'
