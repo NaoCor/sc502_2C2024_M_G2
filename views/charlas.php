@@ -44,8 +44,8 @@
             <?php foreach ($charlas as $charla) { ?>
                 <div class="col-md-4 mb-4 d-flex justify-content-center"">
                     <div class="card" style="width: 18rem;">
-                        <img src=<?php echo $charla['nombreCharla']?>
-                            class="card-img-top" alt="Acoso Social">
+                        <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-charla-publica_114360-8970.jpg"
+                            class="card-img-top" alt="Imagen Charla">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $charla['nombreCharla']?></h5>
                             <a href="./infoCharla.php?categoria=<?php echo $charla['idCharla']?>" 

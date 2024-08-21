@@ -65,7 +65,7 @@
             <div class="col-md-4">
                 <div class="text-center">
                 <figure>
-    <img src="<?php echo $charla['foto']; ?>"
+    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-charla-publica_114360-8970.jpg"    
          alt="Imagen de Charla" class="img-fluid rounded" style="max-width: 100%;">
 </figure>
 

@@ -81,10 +81,7 @@ class CharlaModel extends Conexion {
     public function getconsiste(){
         return $this->consiste ;
     }
-    public function getposter(){
-        return  $this->poster ;
-    }
-
+  
     
    
  
@@ -151,9 +148,7 @@ public function setdescripcion($descripcion){
 public function setconsiste($consiste){
     $this->consiste = $consiste;
 }
-public function setposter($poster){
-    $this->poster = $poster;
-}
+
 public function setduracion($duracion){
     $this->duracion = $duracion;
 }
@@ -203,18 +198,11 @@ public function setduracion($duracion){
 
 
     public function guardarCharla(){
-        $query = "INSERT INTO `charla`(`idPresentador`, `nombreCharla`, `lugar`, `fecha`, `hora`, `costo`, `tipo`, `duracion`, `formato`, `objetivo`, `descripcionCorta`, `consiste`, `foto`)
-        VALUES (:idPresentadorPDO,:nombreCharlaPDO,:lugarPDO, :fechaPDO,:horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionCortaPDO, :consistePDO, :fotoPDO)";
+        $query = "INSERT INTO `charla`(`idPresentador`, `nombreCharla`, `lugar`, `fecha`, `hora`, `costo`, `tipo`, `duracion`, `formato`, `objetivo`, `descripcionCorta`, `consiste`)
+        VALUES (:idPresentadorPDO,:nombreCharlaPDO,:lugarPDO, :fechaPDO,:horaPDO, :costoPDO, :tipoPDO, :duracionPDO, :formatoPDO, :objetivoPDO, :descripcionCortaPDO, :consistePDO)";
         
         try {
-            $posterP = "";
-            if (isset($_FILES['poster']) && $_FILES['poster']['error'] == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES['poster']['tmp_name'];
-                $name = $_FILES['poster']['name'];
-                $upload_dir = '../uploads/';
-                $posterP = $upload_dir . basename($name);
-                move_uploaded_file($tmp_name, $posterP);
-            }
+       
         
             $presentadorP = $this->getIdPresentador();
             $nombreCharlaP = $this->getNombreCharla();
@@ -244,7 +232,6 @@ public function setduracion($duracion){
             $resultado->bindParam(":objetivoPDO", $objetivoP, PDO::PARAM_STR);
             $resultado->bindParam(":descripcionCortaPDO", $descripcionCortaP, PDO::PARAM_STR);
             $resultado->bindParam(":consistePDO", $consisteP, PDO::PARAM_STR);
-            $resultado->bindParam(":fotoPDO", $posterP, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $ex) {

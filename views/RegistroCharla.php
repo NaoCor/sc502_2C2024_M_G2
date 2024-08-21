@@ -32,25 +32,25 @@
                         <label for="nombreCompleto" class="form-label">Nombre Completo</label>
                         <div class="row">
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre">
+                                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre" required>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="primerApellido" name="primerApellido">
+                                <input type="text" class="form-control" placeholder="1er. Apellido" aria-label="1er. Apellido" id="primerApellido" name="primerApellido" required>
                             </div>
                         
                             <div class="mb-3">
                         <label for="costo" class="form-label">Numero de identificacion/Cedula</label>
-                        <input type="number" id="identificacion" name="identificacion" class="form-control">
+                        <input type="number" id="identificacion" name="identificacion" class="form-control" required>
                     </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="numero" class="form-label">Número Telefónico</label>
-                        <input type="text"class="form-control" placeholder="+506" id="numero" name="numero">
+                        <input type="text"class="form-control" placeholder="+506" id="numero" name="numero" required>
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo Electrónico</label>
-                        <input type="email"  class="form-control"  id="correo" name="correo">
+                        <input type="email"  class="form-control"  id="correo" name="correo" required >
                     </div>
                 </fieldset>
                 
@@ -58,23 +58,23 @@
                     <legend class="fw-bold">Información Charla</legend>
                     <div class="mb-3">
                         <label for="nombreCharla" class="form-label">Nombre Charla</label>
-                        <input type="text" id="nombreCharla" name="nombreCharla" class="form-control">
+                        <input type="text" id="nombreCharla" name="nombreCharla" class="form-control"required>
                     </div>
                     <div class="mb-3">
                         <label for="fecha" class="form-label">Fecha</label>
-                        <input type="date" id="fecha" name="fecha" class="form-control">
+                        <input type="date" id="fecha" name="fecha" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="hora" class="form-label">Hora</label>
-                        <input type="time" id="hora" name="hora" class="form-control">
+                        <input type="time" id="hora" name="hora" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="costo" class="form-label">Costo</label>
-                        <input type="number" id="costo" name="costo" class="form-control">
+                        <input type="number" id="costo" name="costo" class="form-control"required >
                     </div>
                     <div class="mb-3">
                         <label for="lugar" class="form-label">Lugar</label>
-                        <input type="text" id="lugar" name="lugar" class="form-control">
+                        <input type="text" id="lugar" name="lugar" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="tipo" class="form-label">Tipo</label>
@@ -87,28 +87,25 @@
                    
                     <div class="mb-3">
                         <label for="duracion" class="form-label">Duración</label>
-                        <input type="text" id="duracion" name="duracion" class="form-control">
+                        <input type="text" id="duracion" name="duracion" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="formato" class="form-label">Formato</label>
-                        <input type="text" id="formato" name="formato" class="form-control">
+                        <input type="text" id="formato" name="formato" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="objetivo" class="form-label">Objetivo</label>
-                        <textarea id="objetivo" name="objetivo" class="form-control"></textarea>
+                        <textarea id="objetivo" name="objetivo" class="form-control"  required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción Corta</label>
-                        <input type="text" id="descripcion" name="descripcion" class="form-control">
+                        <input type="text" id="descripcion" name="descripcion" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="consiste" class="form-label">En qué consiste</label>
-                        <textarea id="consiste" name="consiste" class="form-control"></textarea>
+                        <textarea id="consiste" name="consiste" class="form-control"required ></textarea>
                     </div>
-                    <div class="mb-3">
-    <label for="poster" class="form-label">Poster</label>
-    <input type="file" id="poster" name="poster" class="form-control">
-</div>
+   
 
                 </fieldset>
                 
