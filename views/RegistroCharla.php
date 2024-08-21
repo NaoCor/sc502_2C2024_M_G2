@@ -106,9 +106,10 @@
                         <textarea id="consiste" name="consiste" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="poster" class="form-label">Poster</label>
-                        <input type="file" id="poster" name="poster" class="form-control">
-                    </div>
+    <label for="poster" class="form-label">Poster</label>
+    <input type="file" id="poster" name="poster" class="form-control">
+</div>
+
                 </fieldset>
                 
                 <div class="text-end">

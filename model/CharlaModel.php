@@ -208,9 +208,9 @@ public function setduracion($duracion){
         
         try {
             $posterP = "";
-            if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES['foto']['foto'];
-                $name = $_FILES['foto']['name'];
+            if (isset($_FILES['poster']) && $_FILES['poster']['error'] == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES['poster']['tmp_name'];
+                $name = $_FILES['poster']['name'];
                 $upload_dir = '../uploads/';
                 $posterP = $upload_dir . basename($name);
                 move_uploaded_file($tmp_name, $posterP);
@@ -228,7 +228,7 @@ public function setduracion($duracion){
             $objetivoP = $this->getobjetivo();
             $descripcionCortaP = $this->getdescripcion();
             $consisteP= $this->getconsiste();
-            $posterP= $this->getposter();
+            
         
             self::getConexion();
             $resultado = self::$cnx->prepare($query);

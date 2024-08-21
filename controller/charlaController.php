@@ -43,7 +43,7 @@
     $charla->setobjetivo($objetivo);
     $charla->setdescripcion($descripcionCorta);
     $charla->setconsiste($consiste);
-
+    $charla->setposter($poster);
 
     try {
         $charla->guardarPresentador();
